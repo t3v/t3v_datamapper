@@ -10,43 +10,42 @@ Installation
 2. Run `composer install` or `composer update` to install all dependencies with Composer
 3. Include the TypoScript for T3v DataMapper in the main TypoScript template
 
-Command
--------
+Commands
+--------
 
 ### Page
 
-* [Language Overlay Command Controller]
+* Language Overlay Command
 
-    * List Command
-    * Hide Command
-    * Unhide Command
+    * List Action
+    * Hide Action
+    * Unhide Action
 
 Domain
 ------
 
 ### Model
 
-* [Abstract Model]
-* [Page]
+* Page
 
 #### Page
 
-* [Language Overlay]
+* Language Overlay
 
 Service
 -------
 
-* [Database Service]
-* [Page Service]
+* Database Service
+* Page Service
 
 ### Validation
 
-* [Validator Service]
+* Validator Service
 
 View Helpers
 ------------
 
-* [Page View Helper]
+* Page View Helper
 
 Bug Reports
 -----------
@@ -72,15 +71,6 @@ License
 -------
 
 T3v DataMapper is released under the [MIT License (MIT)], see [LICENSE].
-
-[Abstract Model]: https://github.com/t3v/t3v_datamapper/blob/master/Classes/Domain/Model/AbstractModel.php "Abstract Model"
-[Database Service]: https://github.com/t3v/t3v_datamapper/blob/master/Classes/Service/DatabaseService.php "Database Service"
-[Language Overlay Command Controller]: https://github.com/t3v/t3v_datamapper/blob/master/Classes/Command/Page/LanguageOverlayCommandController.php "Language Overlay Command Controller"
-[Language Overlay]: https://github.com/t3v/t3v_datamapper/blob/master/Classes/Domain/Model/Page/LanguageOverlay.php "Language Overlay"
-[Page Service]: https://github.com/t3v/t3v_datamapper/blob/master/Classes/Service/PageService.php "Page Service"
-[Page View Helper]: https://github.com/t3v/t3v_datamapper/blob/master/Classes/ViewHelpers/PageViewHelper.php "Page View Helper"
-[Page]: https://github.com/t3v/t3v_datamapper/blob/master/Classes/Domain/Model/Page.php "Page"
-[Validator Service]: https://github.com/t3v/t3v_datamapper/blob/master/Classes/Service/Validation/ValidatorService.php "Validator Service"
 
 [Composer]: https://getcomposer.org "Dependency Manager for PHP"
 [Database]: https://github.com/illuminate/database "Illuminate Database component"
