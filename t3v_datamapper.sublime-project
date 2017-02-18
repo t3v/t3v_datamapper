@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "name": "t3v_datamapper",
+      "path": "./",
+      "folder_exclude_patterns": [
+      ],
+      "file_exclude_patterns": [
+        ".keep"
+      ]
+    }
+  ]
+}

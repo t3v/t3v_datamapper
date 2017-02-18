@@ -1,0 +1,47 @@
+{
+  "name": "t3v/t3v_datamapper",
+  "type": "typo3-cms-extension",
+  "description": "Bring the Database and Validation component from Laravel to TYPO3.",
+  "authors": [
+    {
+      "name": "Maik Kempe",
+      "email": "mkempe@bitaculous.com",
+      "homepage": "https://bitaculous.com"
+    }
+  ],
+  "keywords": [
+    "CMS",
+    "Data",
+    "Database",
+    "Laravel",
+    "Mapper",
+    "ORM",
+    "SQL",
+    "T3v",
+    "TYPO3",
+    "TYPO3voila",
+    "UH LÁLÁ",
+    "Validation"
+  ],
+  "homepage": "https://t3v.github.io/t3v_datamapper/",
+  "license": "MIT",
+  "require": {
+    "php": ">= 5.6",
+    "typo3/cms-core": ">= 7.6.0, < 8.1.0",
+    "illuminate/database": "~5.3.23",
+    "illuminate/validation": "~5.3.23",
+    "t3v/t3v_core": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5.7.6"
+  },
+  "replace": {
+    "t3v_datamapper": "self.version",
+    "typo3-ter/t3v_datamapper": "self.version"
+  },
+  "autoload": {
+    "psr-4": {
+      "T3v\\T3vDataMapper\\": "Classes"
+    }
+  }
+}
