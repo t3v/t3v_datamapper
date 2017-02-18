@@ -1,7 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
   'title' => 'T3v DataMapper',
-  'description' => 'Bring the Database and Validation component from Laravel to TYPO3.',
+  'description' => 'Bring the Database and Validation magic from Laravel to TYPO3.',
   'author' => 'Maik Kempe',
   'author_email' => 'mkempe@bitaculous.com',
   'author_company' => 'Bitaculous - It\'s all about the bits, baby!',

@@ -1,7 +1,7 @@
 [T3v DataMapper]
 ================
 
-**Bring the [Database] and [Validation] component from [Laravel] to [TYPO3].**
+**Bring the [Database] and [Validation] magic from [Laravel] to [TYPO3].**
 
 Installation
 ------------
@@ -81,7 +81,7 @@ T3v DataMapper is released under the [MIT License (MIT)], see [LICENSE].
 [MIT License (MIT)]: http://opensource.org/licenses/MIT "The MIT License (MIT)"
 [Semantic Versioning 2.0.0]: http://semver.org "Semantic Versioning 2.0.0"
 [Sven Lahann]: https://github.com/svenlahann "Sven Lahann at GitHub"
-[T3v DataMapper]: https://t3v.github.io/t3v_datamapper/ "Bring the Database and Validation component from Laravel to TYPO3."
+[T3v DataMapper]: https://t3v.github.io/t3v_datamapper/ "Bring the Database and Validation magic from Laravel to TYPO3."
 [TYPO3]: https://typo3.org "The Enterprise Open Source CMS"
 [TYPO3voila]: https://github.com/t3v "“UH LÁLÁ, TYPO3!”"
 [Validation]: https://github.com/illuminate/validation "Illuminate Validation component"
