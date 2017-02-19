@@ -4,7 +4,6 @@ addons:
       - parallel
 
 before_install:
-  - echo "PHP version is $TRAVIS_PHP_VERSION."
   - if php -i | grep -q xdebug; then phpenv config-rm xdebug.ini; fi
 
 before_script:

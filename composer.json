@@ -30,12 +30,15 @@
   },
   "license": "MIT",
   "config": {
-    "bin-dir": ".Build/bin",
-    "vendor-dir": ".Build/vendor",
     "preferred-install": {
       "typo3/cms": "source"
-    }
+    },
+    "bin-dir": ".Build/bin",
+    "vendor-dir": ".Build/vendor"
   },
+  "repositories": [
+    { "type": "vcs", "url": "https://github.com/t3v/t3v_core.git" }
+  ],
   "extra": {
     "typo3/cms": {
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
