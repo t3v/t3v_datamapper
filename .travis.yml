@@ -4,7 +4,7 @@ addons:
       - parallel
 
 before_install:
-  - echo "PHP version: $TRAVIS_PHP_VERSION"
+  - echo "PHP version is $TRAVIS_PHP_VERSION."
   - if php -i | grep -q xdebug; then phpenv config-rm xdebug.ini; fi
 
 before_script:
@@ -43,10 +43,10 @@ notifications:
   email:
     - dev@bitaculous.com
 
-php:
-  - 5.6
-  - 7
-  - 7.1
+# php:
+#   - 5.6
+#   - 7
+#   - 7.1
 
 script:
   - >
