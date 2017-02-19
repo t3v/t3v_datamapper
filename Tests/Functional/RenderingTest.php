@@ -41,11 +41,11 @@ class RenderingTest extends FunctionalTestCase {
    * @test
    */
   public function templateIsRendered() {
-    $expectedDom = new DomDocument();
+    $expectedDom = new \DomDocument();
     $expectedDom->loadHTML('<h1>T3v DataMapper</h1>');
     $expectedDom->preserveWhiteSpace = false;
 
-    $actualDom = new DomDocument();
+    $actualDom = new \DomDocument();
     $actualDom->loadHTML($this->fetchFrontendResponse(['id' => '1'])->getContent());
     $actualDom->preserveWhiteSpace = false;
 
