@@ -1,7 +1,7 @@
 {
   "name": "t3v/t3v_datamapper",
   "type": "typo3-cms-extension",
-  "description": "Bring the Database and Validation magic from Laravel to TYPO3.",
+  "description": "Brings the Database and Validation magic from Laravel to TYPO3.",
   "authors": [
     {
       "name": "Maik Kempe",
