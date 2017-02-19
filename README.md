@@ -55,6 +55,27 @@ View Helpers
 
 * Page View Helper
 
+Development
+-----------
+
+### Setup
+
+```
+$ ./Scripts/Setup.sh
+```
+
+### Run Unit Tests
+
+```
+$ ./Scripts/Tests/Unit.sh
+```
+
+### Run Functional Tests
+
+```
+$ ./Scripts/Tests/Functional.sh
+```
+
 Bug Reports
 -----------
 
