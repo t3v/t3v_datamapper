@@ -3,6 +3,12 @@
 
 **Brings the [Database] and [Validation] magic from [Laravel] to [TYPO3].**
 
+Dependencies
+------------
+
+* TYPO3 CMS 7.6 or greater
+* T3v Core extension
+
 Installation
 ------------
 
