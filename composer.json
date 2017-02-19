@@ -6,7 +6,8 @@
     {
       "name": "Maik Kempe",
       "email": "mkempe@bitaculous.com",
-      "homepage": "https://bitaculous.com"
+      "homepage": "https://bitaculous.com",
+      "role": "Developer"
     }
   ],
   "keywords": [
@@ -24,24 +25,55 @@
     "Validation"
   ],
   "homepage": "https://t3v.github.io/t3v_datamapper/",
-  "license": "MIT",
-  "require": {
-    "php": ">= 5.6",
-    "typo3/cms-core": ">= 7.6.0, < 8.1.0",
-    "illuminate/database": "~5.3.23",
-    "illuminate/validation": "~5.3.23",
-    "t3v/t3v_core": "*"
+  "support": {
+    "issues": "https://github.com/t3v/t3v_datamapper/issues"
   },
-  "require-dev": {
-    "phpunit/phpunit": "~5.7.6"
+  "license": "MIT",
+  "config": {
+    "bin-dir": ".Build/bin",
+    "vendor-dir": ".Build/vendor",
+    "preferred-install": {
+      "typo3/cms": "source"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
   },
   "replace": {
     "t3v_datamapper": "self.version",
     "typo3-ter/t3v_datamapper": "self.version"
   },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/Web/typo3conf/ext/",
+      "[ -L .Build/Web/typo3conf/ext/t3v_datamapper ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/t3v_datamapper"
+    ]
+  },
+  "require": {
+    "php": ">= 5.6",
+    "typo3/cms-core": ">= 7.6.0, < 8.7.0",
+    "illuminate/database": "~5.3.23",
+    "illuminate/validation": "~5.3.23",
+    "t3v/t3v_core": "*"
+  },
+  "require-dev": {
+    "namelesscoder/typo3-repository-client": "~1.3.1",
+    "mikey179/vfsStream": "~1.6.4",
+    "phpunit/phpunit": "~5.7.13"
+  },
   "autoload": {
     "psr-4": {
       "T3v\\T3vDataMapper\\": "Classes"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "T3v\\T3vDataMapper\\Tests\\": "Tests",
+      "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/",
+      "TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests/"
     }
   }
 }

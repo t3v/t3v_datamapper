@@ -1,0 +1,70 @@
+addons:
+  apt:
+    packages:
+      - parallel
+
+before_install:
+  - echo "PHP version: $TRAVIS_PHP_VERSION"
+  - if php -i | grep -q xdebug; then phpenv config-rm xdebug.ini; fi
+
+before_script:
+  - composer require typo3/cms="$TYPO3_VERSION"
+  - if [ -d .Build/vendor/typo3/cms/components/testing_framework/Resources/Core/Build ]; then export TYPO3_BUILD_DIR=".Build/vendor/typo3/cms/components/testing_framework/Resources/Core/Build"; else export TYPO3_BUILD_DIR=".Build/vendor/typo3/cms/typo3/sysext/core/Build"; fi
+  - export TYPO3_WEB_DIR="$PWD/.Build/Web"
+  - export PATH="$PATH:./Scripts"
+
+branches:
+  except:
+    - gh-pages
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+language: php
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 5.6
+      env: TYPO3_VERSION=^7.6
+    - php: 7.0
+      env: TYPO3_VERSION=^7.6
+    - php: 7.0
+      env: TYPO3_VERSION="dev-master as 8.6.0"
+    - php: 7.1
+      env: TYPO3_VERSION=^7.6
+    - php: 7.1
+      env: TYPO3_VERSION="dev-master as 8.6.0"
+  allow_failures:
+    - env: TYPO3_VERSION="dev-master as 8.6.0"
+
+notifications:
+  email:
+    - dev@bitaculous.com
+
+php:
+  - 5.6
+  - 7
+  - 7.1
+
+script:
+  - >
+    echo;
+    echo "Running unit tests...";
+    .Build/bin/phpunit --colors -c $TYPO3_BUILD_DIR/UnitTests.xml Tests/Unit/
+
+  # - >
+  #   echo;
+  #   echo "Running PHP lint...";
+  #   find . -name \*.php ! -path "./.Build/*" | parallel --gnu php -d display_errors=stderr -l {} > /dev/null \;
+
+  - >
+    echo;
+    export typo3DatabaseHost="localhost";
+    export typo3DatabaseUsername="root";
+    export typo3DatabasePassword="";
+    export typo3DatabaseName="typo3";
+    find 'Tests/Functional' -wholename '*Test.php' | parallel --gnu 'echo; echo "Running functional test suite {}..."; .Build/bin/phpunit --colors  -c $TYPO3_BUILD_DIR/FunctionalTests.xml {}'
+
+sudo: false

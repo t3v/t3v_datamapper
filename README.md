@@ -1,6 +1,8 @@
 [T3v DataMapper]
 ================
 
+[![Travis CI Status][Travis CI Status]][Travis CI]
+
 **Brings the [Database] and [Validation] magic from [Laravel] to [TYPO3].**
 
 Dependencies
@@ -12,7 +14,7 @@ Dependencies
 Installation
 ------------
 
-1. Add T3v DataMapper (`t3v_datamapper`) to the [Composer] configuration (`composer.json`)
+1. Add T3v DataMapper (`t3v_datamapper`) as dependency to the [Composer] configuration (`composer.json`)
 2. Run `composer install` or `composer update` to install all dependencies with Composer
 3. Include the TypoScript for T3v DataMapper
 
@@ -88,6 +90,8 @@ T3v DataMapper is released under the [MIT License (MIT)], see [LICENSE].
 [Semantic Versioning 2.0.0]: http://semver.org "Semantic Versioning 2.0.0"
 [Sven Lahann]: https://github.com/svenlahann "Sven Lahann at GitHub"
 [T3v DataMapper]: https://t3v.github.io/t3v_datamapper/ "Brings the Database and Validation magic from Laravel to TYPO3."
+[Travis CI Status]: https://img.shields.io/travis/t3v/t3v_datamapper.svg?style=flat "Travis CI Status"
+[Travis CI]: https://travis-ci.org/t3v/t3v_datamapper "T3v DataMapper at Travis CI"
 [TYPO3]: https://typo3.org "The Enterprise Open Source CMS"
 [TYPO3voila]: https://github.com/t3v "“UH LÁLÁ, TYPO3!”"
 [Validation]: https://github.com/illuminate/validation "Illuminate Validation component"
