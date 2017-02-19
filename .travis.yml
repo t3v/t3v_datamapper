@@ -8,8 +8,8 @@ before_install:
 
 before_script:
   - composer require typo3/cms="$TYPO3_VERSION"
-  - if [ -d .Build/vendor/typo3/cms/components/testing_framework/Resources/Core/Build ]; then export TYPO3_PATH_BUILD=".Build/vendor/typo3/cms/components/testing_framework/Resources/Core/Build"; else export TYPO3_PATH_BUILD=".Build/vendor/typo3/cms/typo3/sysext/core/Build"; fi
   - export TYPO3_PATH_WEB="$PWD/.Build/Web"
+  - if [ -d .Build/vendor/typo3/cms/components/testing_framework/Resources/Core/Build ]; then export TYPO3_PATH_BUILD=".Build/vendor/typo3/cms/components/testing_framework/Resources/Core/Build"; else export TYPO3_PATH_BUILD=".Build/vendor/typo3/cms/typo3/sysext/core/Build"; fi
   - export PATH="$PATH:./Scripts"
 
 branches:
@@ -26,13 +26,13 @@ matrix:
   fast_finish: true
   include:
     - php: 5.6
-      env: TYPO3_VERSION=^7.6
+      env: TYPO3_VERSION="^7.6"
     - php: 7.0
-      env: TYPO3_VERSION=^7.6
+      env: TYPO3_VERSION="^7.6"
     - php: 7.0
       env: TYPO3_VERSION="dev-master as 8.6.0"
     - php: 7.1
-      env: TYPO3_VERSION=^7.6
+      env: TYPO3_VERSION="^7.6"
     - php: 7.1
       env: TYPO3_VERSION="dev-master as 8.6.0"
   allow_failures:
@@ -64,6 +64,6 @@ script:
     export typo3DatabaseUsername="root";
     export typo3DatabasePassword="";
     export typo3DatabaseName="typo3";
-    find 'Tests/Functional' -wholename '*Test.php' | parallel --gnu 'echo; echo "Running functional test suite {}..."; .Build/bin/phpunit --colors  -c $TYPO3_PATH_BUILD/FunctionalTests.xml {}'
+    find 'Tests/Functional' -wholename '*Test.php' | parallel --gnu 'echo; echo "Running functional test suite (`{}`)..."; .Build/bin/phpunit --colors -c $TYPO3_PATH_BUILD/FunctionalTests.xml {}'
 
 sudo: false
