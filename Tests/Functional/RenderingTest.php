@@ -36,13 +36,20 @@ class RenderingTest extends FunctionalTestCase {
   }
 
   /**
+   * Test if template is rendered.
+   *
    * @test
    */
-  public function rendersPage() {
-    $requestArguments = array('id' => '1');
-    $expectedContent  = '<h1>T3v DataMapper</h1>';
+  public function templateIsRendered() {
+    $expectedDom = new DomDocument();
+    $expectedDom->loadHTML('<h1>T3v DataMapper</h1>');
+    $expectedDom->preserveWhiteSpace = false;
 
-    $this->assertSame($expectedContent, $this->fetchFrontendResponse($requestArguments)->getContent());
+    $actualDom = new DomDocument();
+    $actualDom->loadHTML($this->fetchFrontendResponse(['id' => '1'])->getContent());
+    $actualDom->preserveWhiteSpace = false;
+
+    $this->assertEquals($expectedDom->saveHTML(), $actualDom->saveHTML());
   }
 
   /**

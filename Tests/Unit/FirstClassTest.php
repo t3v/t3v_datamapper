@@ -7,6 +7,8 @@ use \T3v\T3vDataMapper\Tests\Unit\Fixtures\LoadableClass;
 
 class FirstClassTest extends UnitTestCase {
   /**
+   * Test if method returns true.
+   *
    * @test
    */
   public function methodReturnsTrue() {
@@ -16,6 +18,8 @@ class FirstClassTest extends UnitTestCase {
   }
 
   /**
+   * Test if view helper base class is loadable.
+   *
    * @test
    */
   public function viewHelperBaseClassIsLoadable() {
