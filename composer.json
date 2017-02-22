@@ -41,7 +41,8 @@
     "typo3-ter/t3v_datamapper": "self.version"
   },
   "repositories": [
-    { "type": "vcs", "url": "https://github.com/t3v/t3v_core.git" }
+    { "type": "composer", "url": "https://composer.typo3.org" },
+    { "type": "vcs",      "url": "https://github.com/t3v/t3v_core.git" }
   ],
   "require": {
     "php": ">= 5.6",
