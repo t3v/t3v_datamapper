@@ -46,8 +46,8 @@
   "require": {
     "php": ">= 5.6",
     "typo3/cms-core": ">= 7.6.0, < 8.7.0",
-    "illuminate/database": "~5.4.9",
-    "illuminate/validation": "~5.4.9",
+    "illuminate/database": "~5.3.23",
+    "illuminate/validation": "~5.3.23",
     "t3v/t3v_core": "*"
   },
   "require-dev": {
