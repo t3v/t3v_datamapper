@@ -8,6 +8,7 @@ Unreleased
 
 * Configured Travis CI
 * Added unit and functional tests
+* Updated Composer configuration / dependencies
 * Updated naming and claim
 * Updated comments
 * Copy from `t3v_illuminate`

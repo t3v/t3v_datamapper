@@ -13,6 +13,7 @@
     "CMS",
     "Data",
     "Database",
+    "Extension",
     "Laravel",
     "Mapper",
     "ORM",
@@ -35,30 +36,18 @@
     "bin-dir": ".Build/bin",
     "vendor-dir": ".Build/vendor"
   },
-  "repositories": [
-    { "type": "vcs", "url": "https://github.com/t3v/t3v_core.git" }
-  ],
-  "extra": {
-    "typo3/cms": {
-      "cms-package-dir": "{$vendor-dir}/typo3/cms",
-      "web-dir": ".Build/Web"
-    }
-  },
   "replace": {
     "t3v_datamapper": "self.version",
     "typo3-ter/t3v_datamapper": "self.version"
   },
-  "scripts": {
-    "post-autoload-dump": [
-      "mkdir -p .Build/Web/typo3conf/ext/",
-      "[ -L .Build/Web/typo3conf/ext/t3v_datamapper ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/t3v_datamapper"
-    ]
-  },
+  "repositories": [
+    { "type": "vcs", "url": "https://github.com/t3v/t3v_core.git" }
+  ],
   "require": {
     "php": ">= 5.6",
     "typo3/cms-core": ">= 7.6.0, < 8.7.0",
-    "illuminate/database": "~5.3.23",
-    "illuminate/validation": "~5.3.23",
+    "illuminate/database": "~5.4.9",
+    "illuminate/validation": "~5.4.9",
     "t3v/t3v_core": "*"
   },
   "require-dev": {
@@ -74,8 +63,20 @@
   "autoload-dev": {
     "psr-4": {
       "T3v\\T3vDataMapper\\Tests\\": "Tests",
-      "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/",
-      "TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests/"
+      "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests",
+      "TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests"
     }
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/Web/typo3conf/ext/",
+      "[ -L .Build/Web/typo3conf/ext/t3v_datamapper ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/t3v_datamapper"
+    ]
   }
 }

@@ -9,7 +9,9 @@ Dependencies
 ------------
 
 * TYPO3 CMS 7.6 or greater
-* T3v Core extension
+* Illuminate Database (`illuminate/database`) component
+* Illuminate Validation (`illuminate/validation`) component
+* T3v Core (`t3v_core`) extension
 
 Installation
 ------------
