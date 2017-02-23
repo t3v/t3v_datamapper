@@ -36,6 +36,8 @@
     "bin-dir": ".Build/bin",
     "vendor-dir": ".Build/vendor"
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "replace": {
     "t3v_datamapper": "self.version",
     "typo3-ter/t3v_datamapper": "self.version"
