@@ -6,6 +6,7 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Improved `PageService` and `PageViewHelper`
 * Configured Travis CI
 * Added unit and functional tests
 * Updated Composer configuration / dependencies
