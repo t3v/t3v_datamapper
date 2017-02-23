@@ -47,10 +47,10 @@ class PageService extends AbstractService {
    * @param int $sysLanguageUid The optional system language UID, defaults to the current system language UID
    * @return array The row for the current page or empty if no page was found
    */
-  public function getCurrentPage($languageOverlay = true, $sysLanguageUid = -1) {
+  public function getCurrentPage($languageOverlay = true, $sysLanguageUid = null) {
     $uid             = intval($GLOBALS['TSFE']->id);
     $languageOverlay = (boolean) $languageOverlay;
-    $sysLanguageUid  = intval($sysLanguageUid);
+    $sysLanguageUid  = intval($sysLanguageUid) || $this->languageService->getSysLanguageUid();
     $page            = $this->getPage($uid, $languageOverlay, $sysLanguageUid);
 
     return $page;
@@ -64,20 +64,21 @@ class PageService extends AbstractService {
    * @param int $sysLanguageUid The optional system language UID, defaults to the current system language UID
    * @return array The row for the page or empty if no page was found
    */
-  public function getPage($uid, $languageOverlay = true, $sysLanguageUid = -1) {
+  public function getPage($uid, $languageOverlay = true, $sysLanguageUid = null) {
     $uid             = intval($uid);
     $languageOverlay = (boolean) $languageOverlay;
-    $sysLanguageUid  = intval($sysLanguageUid);
+    $sysLanguageUid  = intval($sysLanguageUid) || $this->languageService->getSysLanguageUid();
     $page            = Page::find($uid);
 
     if ($page) {
-      $page = $page->getAttributes();
+      $page    = $page->getAttributes();
+      $l18nCfg = $page['l18n_cfg'];
 
-      if ($languageOverlay) {
-        if ($sysLanguageUid < 0) {
-          $sysLanguageUid = $this->languageService->getSysLanguageUid();
-        }
+      if ($l18nCfg === '1') {
+        $page['hidden'] = '1';
+      }
 
+      if ($languageOverlay && $sysLanguageUid > 0) {
         $overlay = LanguageOverlay::where([['pid', '=', $uid], ['sys_language_uid', '=', $sysLanguageUid]])->first();
 
         if ($overlay) {
@@ -99,11 +100,11 @@ class PageService extends AbstractService {
    * @param int $sysLanguageUid The optional system language UID, defaults to the current system language UID
    * @return array The row for the page or empty if no page was found
    */
-  public function getPageByUid($uid, $languageOverlay = true, $sysLanguageUid = -1) {
+  public function getPageByUid($uid, $languageOverlay = true, $sysLanguageUid = null) {
     $uid             = intval($uid);
     $languageOverlay = (boolean) $languageOverlay;
-    $sysLanguageUid  = intval($sysLanguageUid);
+    $sysLanguageUid  = intval($sysLanguageUid) || $this->languageService->getSysLanguageUid();
 
-    return $this->getPage($uid, $languageOverlay);
+    return $this->getPage($uid, $languageOverlay, $sysLanguageUid);
   }
 }
