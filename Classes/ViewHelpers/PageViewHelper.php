@@ -26,7 +26,7 @@ class PageViewHelper extends AbstractViewHelper {
   public function render($uid, $languageOverlay = true, $sysLanguageUid = null) {
     $uid             = intval($uid);
     $languageOverlay = (boolean) $languageOverlay;
-    $sysLanguageUid  = intval($sysLanguageUid) || $this->languageService->getSysLanguageUid();
+    $sysLanguageUid  = intval($sysLanguageUid) ?: $this->languageService->getSysLanguageUid();
 
     return $this->pageService->getPageByUid($uid, $languageOverlay, $sysLanguageUid);
   }

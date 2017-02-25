@@ -50,7 +50,7 @@ class PageService extends AbstractService {
   public function getCurrentPage($languageOverlay = true, $sysLanguageUid = null) {
     $uid             = intval($GLOBALS['TSFE']->id);
     $languageOverlay = (boolean) $languageOverlay;
-    $sysLanguageUid  = intval($sysLanguageUid) || $this->languageService->getSysLanguageUid();
+    $sysLanguageUid  = intval($sysLanguageUid) ?: $this->languageService->getSysLanguageUid();
     $page            = $this->getPage($uid, $languageOverlay, $sysLanguageUid);
 
     return $page;
@@ -67,14 +67,14 @@ class PageService extends AbstractService {
   public function getPage($uid, $languageOverlay = true, $sysLanguageUid = null) {
     $uid             = intval($uid);
     $languageOverlay = (boolean) $languageOverlay;
-    $sysLanguageUid  = intval($sysLanguageUid) || $this->languageService->getSysLanguageUid();
+    $sysLanguageUid  = intval($sysLanguageUid) ?: $this->languageService->getSysLanguageUid();
     $page            = Page::find($uid);
 
     if ($page) {
       $page    = $page->getAttributes();
-      $l18nCfg = $page['l18n_cfg'];
+      $l18nCfg = intval($page['l18n_cfg']);
 
-      if ($l18nCfg === '1') {
+      if ($l18nCfg === 1) {
         $page['hidden'] = '1';
       }
 
@@ -103,7 +103,7 @@ class PageService extends AbstractService {
   public function getPageByUid($uid, $languageOverlay = true, $sysLanguageUid = null) {
     $uid             = intval($uid);
     $languageOverlay = (boolean) $languageOverlay;
-    $sysLanguageUid  = intval($sysLanguageUid) || $this->languageService->getSysLanguageUid();
+    $sysLanguageUid  = intval($sysLanguageUid) ?: $this->languageService->getSysLanguageUid();
 
     return $this->getPage($uid, $languageOverlay, $sysLanguageUid);
   }
