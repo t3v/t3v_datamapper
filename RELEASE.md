@@ -10,4 +10,4 @@ STEPS:
 1. Update Changelog (`CHANGELOG.md`)
 2. Bump version in `ext_emconf.php`
 3. Push changes
-4. Create a tag
+4. Create a new tag
