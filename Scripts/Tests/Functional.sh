@@ -4,10 +4,10 @@
 
 export TYPO3_PATH_WEB=$PWD/.Build/Web
 
-if [ -d .Build/vendor/typo3/cms/components/testing_framework/Resources/Core/Build ]; then
-  export TYPO3_PATH_BUILD=".Build/vendor/typo3/cms/components/testing_framework/Resources/Core/Build"
+if [ -d "$PWD/.Build/vendor/typo3/cms/components/testing_framework/Resources/Core/Build" ]; then
+  export TYPO3_PATH_BUILD="$PWD/.Build/vendor/typo3/cms/components/testing_framework/Resources/Core/Build"
 else
-  export TYPO3_PATH_BUILD=".Build/vendor/typo3/cms/typo3/sysext/core/Build"
+  export TYPO3_PATH_BUILD="$PWD/.Build/vendor/typo3/cms/typo3/sysext/core/Build"
 fi
 
 export typo3DatabaseHost="localhost";
@@ -17,4 +17,4 @@ export typo3DatabaseName="typo3";
 
 # === Functional Tests ===
 
-find 'Tests/Functional' -wholename '*Test.php' | parallel --gnu '.Build/bin/phpunit --colors -c $TYPO3_PATH_BUILD/FunctionalTests.xml {}'
+find 'Tests/Functional' -wholename '*Test.php' | parallel --gnu "$PWD/.Build/bin/phpunit --colors -c $TYPO3_PATH_BUILD/FunctionalTests.xml {}"
