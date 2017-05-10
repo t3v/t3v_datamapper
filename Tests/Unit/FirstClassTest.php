@@ -1,7 +1,7 @@
 <?php
 namespace T3v\T3vDataMapper\Tests\Unit;
 
-use \TYPO3\CMS\Core\Tests\UnitTestCase;
+use \Nimut\TestingFramework\TestCase\UnitTestCase;
 
 use \T3v\T3vDataMapper\Tests\Unit\Fixtures\LoadableClass;
 
