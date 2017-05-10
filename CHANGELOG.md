@@ -3,6 +3,13 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
+Unreleased
+----------
+
+* Compatibility for TYPO3 8.7
+* Added configuration for AppVeyor
+* Use `nimut/testing-framework`
+
 1.0.2
 -----
 
