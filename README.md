@@ -9,14 +9,14 @@ Dependencies
 ------------
 
 * TYPO3 CMS 7.6 or greater
-* Illuminate Database (`illuminate/database`) component
-* Illuminate Validation (`illuminate/validation`) component
-* T3v Core (`t3v_core`) extension
+* Illuminate Database component
+* Illuminate Validation component
+* T3v Core extension
 
 Installation
 ------------
 
-1. Add T3v DataMapper (`t3v_datamapper`) as dependency to the [Composer] configuration (`composer.json`)
+1. Add T3v DataMapper as dependency to the [Composer] configuration
 2. Run `composer install` or `composer update` to install all dependencies with Composer
 3. Include the TypoScript for T3v DataMapper
 
