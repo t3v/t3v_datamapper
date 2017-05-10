@@ -2,7 +2,7 @@
 
 # === Constants ===
 
-TYPO3_VERSION="^7.6"
+TYPO3_VERSION="^8.7"
 
 # === Commands ===
 
