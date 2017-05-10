@@ -8,7 +8,7 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 
 * Compatibility for TYPO3 8.7
 * Added configuration for AppVeyor
-* Use `nimut/testing-framework`
+* Use `nimut/testing-framework` as testing framework
 
 1.0.2
 -----
@@ -30,6 +30,6 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 * Updated Composer configuration / dependencies
 * Updated naming and claim
 * Updated comments
-* Clone from `t3v_illuminate`
+* Clone from T3v Illuminate
 
 [Semantic Versioning]: http://semver.org "Semantic Versioning"
