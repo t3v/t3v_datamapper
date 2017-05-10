@@ -3,6 +3,11 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
+2.0.1
+-----
+
+* Updated Composer configuration
+
 2.0.0
 -----
 
