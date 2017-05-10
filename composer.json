@@ -30,6 +30,9 @@
   },
   "license": "MIT",
   "config": {
+    "preferred-install": {
+      "t3v/t3v_core": "source",
+    },
     "bin-dir": ".Build/bin",
     "vendor-dir": ".Build/vendor"
   },
