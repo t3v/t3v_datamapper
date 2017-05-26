@@ -21,6 +21,7 @@ class ValidatorService extends AbstractService {
    * @return \Illuminate\Validation\Factory The validator factory
    */
   public static function getValidator($locale = 'en_US') {
+    $locale           = (string) $locale;
     $translator       = new Translator($locale, new MessageSelector());
     $validatorFactory = new Factory($translator);
 

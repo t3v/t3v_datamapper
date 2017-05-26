@@ -39,6 +39,11 @@ class DatabaseService extends AbstractService {
    * @return array The default connection.
    */
   protected static function getConnection($driver = 'mysql', $charset = 'utf8', $collation = 'utf8_general_ci', $prefix = '') {
+    $driver    = (string) $driver;
+    $charset   = (string) $charset;
+    $collation = (string) $collation;
+    $prefix    = (string) $prefix;
+
     $connection = [
       'driver'    => $driver,
       'host'      => $GLOBALS['TYPO3_CONF_VARS']['DB']['host'],
