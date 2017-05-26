@@ -6,6 +6,8 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Added `HiddenViewHelper` and `VisibleViewHelper`
+* Improved `PageService`
 * Updated scripts
 
 2.0.1

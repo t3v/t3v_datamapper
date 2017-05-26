@@ -19,7 +19,7 @@ plugin {
     }
 
     settings {
-      # ...
+      languageOverlay = {$plugin.tx_t3vdatamapper.settings.languageOverlay}
     }
   }
 }

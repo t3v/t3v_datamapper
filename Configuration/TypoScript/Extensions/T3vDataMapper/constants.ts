@@ -19,7 +19,7 @@ plugin {
     }
 
     settings {
-      # ...
+      languageOverlay = 1
     }
   }
 }
