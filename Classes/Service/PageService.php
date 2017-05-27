@@ -60,17 +60,18 @@ class PageService extends AbstractService {
    * @return array The row for the page or empty if no page was found
    */
   public function getPage($uid, $languageOverlay = null, $sysLanguageUid = null) {
-    $settings        = $this->getSettings();
     $uid             = intval($uid);
     $languageOverlay = isset($languageOverlay) ? (boolean) $languageOverlay : null;
     $sysLanguageUid  = intval($sysLanguageUid) ?: $this->languageService->getSysLanguageUid();
-    $page            = Page::find($uid);
 
+    $settings             = $this->getSettings();
     $applyLanguageOverlay = (boolean) $settings['languageOverlay'];
 
     if (isset($languageOverlay)) {
       $applyLanguageOverlay = $languageOverlay;
     }
+
+    $page = Page::find($uid);
 
     if ($page) {
       $page    = $page->getAttributes();
