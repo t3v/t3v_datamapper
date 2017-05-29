@@ -3,11 +3,14 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+2.1.0
+-----
 
 * Added `HiddenViewHelper` and `VisibleViewHelper`
 * Improved `PageService`
+* Defined namespace in `ext_localconf` and `ext_tables`
+* Updated extension icon
+* Updated code comments
 * Updated scripts
 
 2.0.1
