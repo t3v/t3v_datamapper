@@ -4,6 +4,7 @@ namespace T3v\T3vDataMapper\ViewHelpers\Page;
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Extbase\Object\ObjectManager;
 
+use \T3v\T3vCore\Service\LanguageService;
 use \T3v\T3vCore\ViewHelpers\AbstractConditionViewHelper;
 
 use \T3v\T3vDataMapper\Service\PageService;
@@ -22,6 +23,7 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
 
     $this->registerArgument('uid', 'int', 'The UID of the page', true);
     $this->registerArgument('languageOverlay', 'boolean', 'If set, the language record (overlay) will be applied', false, null);
+    $this->registerArgument('languageUid', 'int', 'The optional language UID, defaults to the UID of the current system language', false, null);
   }
 
   /**
@@ -31,13 +33,28 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
    * @return boolean Whether the condition is fulfilled
    */
   static protected function evaluateCondition($arguments = null) {
+    $languageService = self::getLanguageService();
+    $pageService     = self::getPageService();
+
     $uid             = intval($arguments['uid']);
     $languageOverlay = isset($arguments['languageOverlay']) ? (boolean) $arguments['languageOverlay'] : null;
-    $pageService     = self::getPageService();
-    $page            = $pageService->getPageByUid($uid, $languageOverlay);
+    $languageUid     = isset($arguments['languageUid']) ? intval($arguments['languageUid']) : $languageService->getLanguageUid();
+    $page            = $pageService->getPageByUid($uid, $languageOverlay, $languageUid);
     $hidden          = (boolean) $page['hidden'];
 
     return $hidden;
+  }
+
+  /**
+   * Helper function to get the language service.
+   *
+   * @return \T3v\T3vCore\Service\LanguageService The language service
+   */
+  static protected function getLanguageService() {
+    $objectManager   = GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
+    $languageService = $objectManager->get('T3v\T3vCore\Service\LanguageService');
+
+    return $languageService;
   }
 
   /**

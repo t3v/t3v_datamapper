@@ -58,13 +58,13 @@ class PageService extends AbstractService {
    *
    * @param int $uid The UID of the page
    * @param boolean $languageOverlay If set, the language record (overlay) will be applied
-   * @param int $sysLanguageUid The optional system language UID, defaults to the current system language UID
+   * @param int $languageUid The optional language UID, defaults to the UID of the current system language
    * @return array The row for the page or empty if no page was found
    */
-  public function getPage($uid, $languageOverlay = null, $sysLanguageUid = null) {
+  public function getPage($uid, $languageOverlay = null, $languageUid = null) {
     $uid             = intval($uid);
     $languageOverlay = isset($languageOverlay) ? (boolean) $languageOverlay : null;
-    $sysLanguageUid  = intval($sysLanguageUid) ?: $this->languageService->getSysLanguageUid();
+    $languageUid     = isset($languageUid) ? intval($languageUid) : $this->$languageService->getLanguageUid();
 
     $settings             = $this->getSettings();
     $applyLanguageOverlay = (boolean) $settings['languageOverlay'];
@@ -83,8 +83,8 @@ class PageService extends AbstractService {
         $page['hidden'] = '1';
       }
 
-      if ($applyLanguageOverlay && $sysLanguageUid > 0) {
-        $overlay = LanguageOverlay::where([['pid', '=', $uid], ['sys_language_uid', '=', $sysLanguageUid]])->first();
+      if ($applyLanguageOverlay && $languageUid > 0) {
+        $overlay = LanguageOverlay::where([['pid', '=', $uid], ['sys_language_uid', '=', $languageUid]])->first();
 
         if ($overlay) {
           $overlay = $overlay->getAttributes();
@@ -102,30 +102,30 @@ class PageService extends AbstractService {
    *
    * @param int $uid The UID of the page
    * @param boolean $languageOverlay If set, the language record (overlay) will be applied
-   * @param int $sysLanguageUid The optional system language UID, defaults to the current system language UID
+   * @param int $languageUid The optional language UID, defaults to the UID of the current system language
    * @return array The row for the page or empty if no page was found
    */
-  public function getPageByUid($uid, $languageOverlay = null, $sysLanguageUid = null) {
+  public function getPageByUid($uid, $languageOverlay = null, $languageUid = null) {
     $uid             = intval($uid);
     $languageOverlay = isset($languageOverlay) ? (boolean) $languageOverlay : null;
-    $sysLanguageUid  = intval($sysLanguageUid) ?: $this->languageService->getSysLanguageUid();
+    $languageUid     = isset($languageUid) ? intval($languageUid) : $this->$languageService->getLanguageUid();
 
-    return $this->getPage($uid, $languageOverlay, $sysLanguageUid);
+    return $this->getPage($uid, $languageOverlay, $languageUid);
   }
 
   /**
    * Get the current page.
    *
    * @param boolean $languageOverlay If set, the language record (overlay) will be applied
-   * @param int $sysLanguageUid The optional system language UID, defaults to the current system language UID
+   * @param int $languageUid The optional language UID, defaults to the UID of the current system language
    * @return array The row for the current page or empty if no page was found
    */
-  public function getCurrentPage($languageOverlay = null, $sysLanguageUid = null) {
+  public function getCurrentPage($languageOverlay = null, $languageUid = null) {
     $uid             = intval($GLOBALS['TSFE']->id);
     $languageOverlay = isset($languageOverlay) ? (boolean) $languageOverlay : null;
-    $sysLanguageUid  = intval($sysLanguageUid) ?: $this->languageService->getSysLanguageUid();
+    $languageUid     = isset($languageUid) ? intval($languageUid) : $this->$languageService->getLanguageUid();
 
-    return $this->getPage($uid, $languageOverlay, $sysLanguageUid);
+    return $this->getPage($uid, $languageOverlay, $languageUid);
   }
 
   /**
