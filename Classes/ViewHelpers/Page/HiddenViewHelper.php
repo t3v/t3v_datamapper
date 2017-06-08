@@ -51,8 +51,8 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
    * @return \T3v\T3vCore\Service\LanguageService The language service
    */
   static protected function getLanguageService() {
-    $objectManager   = GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
-    $languageService = $objectManager->get('T3v\T3vCore\Service\LanguageService');
+    $objectManager   = GeneralUtility::makeInstance(ObjectManager::class);
+    $languageService = $objectManager->get(LanguageService::class);
 
     return $languageService;
   }
@@ -63,8 +63,8 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
    * @return \T3v\T3vDataMapper\Service\PageService The page service
    */
   static protected function getPageService() {
-    $objectManager = GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
-    $pageService   = $objectManager->get('T3v\T3vDataMapper\Service\PageService');
+    $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+    $pageService   = $objectManager->get(PageService::class);
 
     return $pageService;
   }

@@ -45,12 +45,12 @@ class PageService extends AbstractService {
   public function __construct() {
     parent::__construct();
 
-    $this->configurationManager = $this->objectManager->get('TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface');
+    $this->configurationManager = $this->objectManager->get(ConfigurationManagerInterface::class);
 
-    $this->databaseService = $this->objectManager->get('T3v\T3vDataMapper\Service\DatabaseService');
+    $this->databaseService = $this->objectManager->get(DatabaseService::class);
     $this->databaseService->setup();
 
-    $this->languageService = $this->objectManager->get('T3v\T3vCore\Service\LanguageService');
+    $this->languageService = $this->objectManager->get(LanguageService::class);
   }
 
   /**
