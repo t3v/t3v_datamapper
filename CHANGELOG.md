@@ -8,6 +8,7 @@ Unreleased
 
 * Updated dependencies
 * Update Travis CI and AppVeyor configuration
+* Cleaned up
 
 2.2.0
 -----
