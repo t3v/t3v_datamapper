@@ -103,8 +103,11 @@ License
 
 T3v DataMapper is released under the [MIT License (MIT)], see [LICENSE].
 
+[Acceptance testing TYPO3]: https://wiki.typo3.org/Acceptance_testing "Acceptance testing TYPO3"
+[Automated testing TYPO3]: https://wiki.typo3.org/Automated_testing "Automated testing TYPO3"
 [Composer]: https://getcomposer.org "Dependency Manager for PHP"
 [Database]: https://github.com/illuminate/database "Illuminate Database component"
+[Functional testing TYPO3]: https://wiki.typo3.org/Functional_testing "Functional testing TYPO3"
 [here]: https://github.com/t3v/t3v_datamapper/issues "GitHub Issue Tracker"
 [Illuminate]: https://github.com/illuminate "The components that make up the Laravel PHP framework."
 [Laravel]: https://laravel.com "The PHP Framework For Web Artisans"
@@ -117,4 +120,5 @@ T3v DataMapper is released under the [MIT License (MIT)], see [LICENSE].
 [Travis CI]: https://travis-ci.org/t3v/t3v_datamapper "T3v DataMapper at Travis CI"
 [TYPO3]: https://typo3.org "The Enterprise Open Source CMS"
 [TYPO3voila]: https://github.com/t3v "“UH LÁLÁ, TYPO3!”"
+[Unit Testing TYPO3]: https://wiki.typo3.org/Unit_Testing_TYPO3 "Unit testing TYPO3"
 [Validation]: https://github.com/illuminate/validation "Illuminate Validation component"
