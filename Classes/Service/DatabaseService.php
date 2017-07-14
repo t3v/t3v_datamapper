@@ -1,9 +1,9 @@
 <?php
 namespace T3v\T3vDataMapper\Service;
 
-use \Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
-use \T3v\T3vCore\Service\AbstractService;
+use T3v\T3vCore\Service\AbstractService;
 
 /**
  * Database Service Class

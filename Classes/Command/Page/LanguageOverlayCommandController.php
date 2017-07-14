@@ -1,13 +1,13 @@
 <?php
 namespace T3v\T3vDataMapper\Command\Page;
 
-use \TYPO3\CMS\Core\Database\QueryGenerator;
-use \TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Database\QueryGenerator;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-use \T3v\T3vCore\Command\AbstractCommandController;
+use T3v\T3vCore\Command\AbstractCommandController;
 
-use \T3v\T3vDataMapper\Domain\Model\Page\LanguageOverlay;
-use \T3v\T3vDataMapper\Service\DatabaseService;
+use T3v\T3vDataMapper\Domain\Model\Page\LanguageOverlay;
+use T3v\T3vDataMapper\Service\DatabaseService;
 
 /**
  * Language Overlay Command Controller Class
@@ -18,7 +18,7 @@ class LanguageOverlayCommandController extends AbstractCommandController {
   /**
    * The query generator
    *
-   * @var \TYPO3\CMS\Core\Database\QueryGenerator
+   * @var TYPO3\CMS\Core\Database\QueryGenerator
    * @inject
    */
   protected $queryGenerator;
@@ -26,7 +26,7 @@ class LanguageOverlayCommandController extends AbstractCommandController {
   /**
    * The database service
    *
-   * @var \T3v\T3vDataMapper\Service\DatabaseService
+   * @var T3v\T3vDataMapper\Service\DatabaseService
    * @inject
    */
   protected $databaseService;

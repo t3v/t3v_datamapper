@@ -1,7 +1,7 @@
 <?php
 namespace T3v\T3vDataMapper\Domain\Model\Page;
 
-use \T3v\T3vDataMapper\Domain\Model\AbstractModel;
+use T3v\T3vDataMapper\Domain\Model\AbstractModel;
 
 /**
  * Language Overlay Class

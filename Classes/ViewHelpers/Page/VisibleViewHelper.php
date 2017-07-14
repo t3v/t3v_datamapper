@@ -1,7 +1,7 @@
 <?php
 namespace T3v\T3vDataMapper\ViewHelpers\Page;
 
-use \T3v\T3vDataMapper\ViewHelpers\Page\HiddenViewHelper;
+use T3v\T3vDataMapper\ViewHelpers\Page\HiddenViewHelper;
 
 /**
  * Visible View Helper Class
