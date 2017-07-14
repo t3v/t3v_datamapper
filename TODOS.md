@@ -7,4 +7,4 @@ TODOS
 TYPO3 8 LTS
 -----------
 
-- [ ] Update `DatabaseService::getConnection`
+- [ ] Update `getConnection` in `DatabaseService`
