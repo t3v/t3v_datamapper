@@ -14,7 +14,7 @@ class PageViewHelper extends AbstractViewHelper {
   /**
    * The page service.
    *
-   * @var T3v\T3vDataMapper\Service\PageService
+   * @var \T3v\T3vDataMapper\Service\PageService
    * @inject
    */
   protected $pageService;

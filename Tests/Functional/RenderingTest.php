@@ -57,11 +57,11 @@ class RenderingTest extends FunctionalTestCase {
   }
 
   /**
-   * Helper function to fetch Front-End response.
+   * Helper function to fetch the Front-end response.
    *
    * @param array $requestArguments The request arguments
    * @param boolean $failOnFailure Fail on failure, defaults to `true`
-   * @return Response The response
+   * @return \Nimut\TestingFramework\Http\Response The Front-end response
    */
   protected function fetchFrontendResponse(array $requestArguments, $failOnFailure = true) {
     $failOnFailure = (boolean) $failOnFailure;

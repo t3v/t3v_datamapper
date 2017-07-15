@@ -18,7 +18,7 @@ class LanguageOverlayCommandController extends AbstractCommandController {
   /**
    * The query generator
    *
-   * @var TYPO3\CMS\Core\Database\QueryGenerator
+   * @var \TYPO3\CMS\Core\Database\QueryGenerator
    * @inject
    */
   protected $queryGenerator;
@@ -26,7 +26,7 @@ class LanguageOverlayCommandController extends AbstractCommandController {
   /**
    * The database service
    *
-   * @var T3v\T3vDataMapper\Service\DatabaseService
+   * @var \T3v\T3vDataMapper\Service\DatabaseService
    * @inject
    */
   protected $databaseService;

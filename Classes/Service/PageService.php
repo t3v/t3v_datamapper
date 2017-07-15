@@ -19,21 +19,21 @@ class PageService extends AbstractService {
   /**
    * The configuration manager.
    *
-   * @var TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
+   * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
    */
   protected $configurationManager;
 
   /**
    * The database service.
    *
-   * @var T3v\T3vDataMapper\Service\DatabaseService
+   * @var \T3v\T3vDataMapper\Service\DatabaseService
    */
   protected $databaseService;
 
   /**
    * The language service.
    *
-   * @var T3v\T3vCore\Service\LanguageService
+   * @var \T3v\T3vCore\Service\LanguageService
    */
   protected $languageService;
 
