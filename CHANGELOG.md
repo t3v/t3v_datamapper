@@ -6,8 +6,9 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
-* Updated AppVeyor configuration
 * Formatted code and cleanup
+* Update Composer configuration
+* Updated AppVeyor configuration
 
 2.2.2
 -----
