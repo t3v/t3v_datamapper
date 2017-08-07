@@ -41,7 +41,7 @@ class DatabaseService extends AbstractService {
 
     $connection = [];
 
-    if (is_array($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default'])) {
+    if (is_array($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections'])) {
       $connection = [
         'driver'    => $extensionConfiguration['driver'] ?: 'mysql',
         'host'      => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'],
