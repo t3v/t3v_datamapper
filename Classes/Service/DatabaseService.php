@@ -12,7 +12,7 @@ use T3v\T3vCore\Service\AbstractService;
  */
 class DatabaseService extends AbstractService {
   /**
-   * Setup the database / Eloquent ORM.
+   * Setup the Eloquent ORM.
    */
   public static function setup() {
     // First, create a new `Capsule` manager instance. Capsule aims to make configuring the library for usage outside of
