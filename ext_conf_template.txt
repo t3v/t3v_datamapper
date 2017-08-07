@@ -1,0 +1,2 @@
+# cat=connection/enable; type=options[MySQL=mysql,PostgreSQL=postgres,SQLite=sqlite,SQL Server=sqlsrv]; label=Driver:The driver to use in the Laravel Capsule instance.
+driver = mysql

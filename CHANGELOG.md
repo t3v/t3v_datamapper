@@ -6,6 +6,8 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Streamlined `getConnection` in `DatabaseService`
+* Added configuration option for driver used in the Laravel Capsule instance
 * Formatted code and cleanup
 * Update Composer configuration
 * Updated AppVeyor configuration

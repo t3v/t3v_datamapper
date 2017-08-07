@@ -30,29 +30,24 @@ class DatabaseService extends AbstractService {
   }
 
   /**
-   * Returns the connection configuration.
+   * Returns the connection configuration from the Global TYPO3 configuration options.
    *
-   * @param string $driver The optional driver, defaults to `mysql`
-   * @param string $charset The optional charset, defaults to `utf8`
-   * @param string $collation The optional collation, defaults to `utf8_general_ci`
-   * @param string $prefix The optional prefix, empty by default
-   * @return array The default connection.
+   * @return array The connection configuration
+   * @link https://laravel.com/docs/master/database#configuration The Laravel Database Configuration
+   * @link https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/GlobalValues/GlobalVariables The TYPO3 Global variables
    */
-  protected static function getConnection($driver = 'mysql', $charset = 'utf8', $collation = 'utf8_general_ci', $prefix = '') {
-    $driver    = (string) $driver;
-    $charset   = (string) $charset;
-    $collation = (string) $collation;
-    $prefix    = (string) $prefix;
+  protected static function getConnection() {
+    $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3v_datamapper']);
 
     $connection = [
-      'driver'    => $driver,
+      'driver'    => $extensionConfiguration['driver'] ?: 'mysql',
       'host'      => $GLOBALS['TYPO3_CONF_VARS']['DB']['host'],
       'username'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['username'],
       'password'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['password'],
       'database'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['database'],
-      'charset'   => $charset,
-      'collation' => $collation,
-      'prefix'    => $prefix
+      'charset'   => $GLOBALS['TYPO3_CONF_VARS']['DB']['charset'] ?: 'utf8',
+      'collation' => $GLOBALS['TYPO3_CONF_VARS']['DB']['collation'] ?: 'utf8_general_ci',
+      'prefix'    => $GLOBALS['TYPO3_CONF_VARS']['DB']['prefix'] ?: ''
     ];
 
     return $connection;

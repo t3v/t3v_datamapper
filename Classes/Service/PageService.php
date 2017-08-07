@@ -129,7 +129,7 @@ class PageService extends AbstractService {
   }
 
   /**
-   * Helper function to get the settings (`plugin.tx_t3vdatamapper.settings`).
+   * Helper function to get the settings from `plugin.tx_t3vdatamapper.settings`.
    *
    * @return array The settings
    */
