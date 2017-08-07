@@ -3,8 +3,8 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+2.3.0
+-----
 
 * Streamlined `getConnection` in `DatabaseService`
 * Added configuration option for driver used in the Laravel Capsule instance
