@@ -17,4 +17,13 @@
     <deleted>0</deleted>
     <perms_everybody>15</perms_everybody>
   </pages>
+
+  <pages>
+    <uid>3</uid>
+    <pid>1</pid>
+    <title>Second page</title>
+    <doktype>1</doktype>
+    <deleted>0</deleted>
+    <perms_everybody>15</perms_everybody>
+  </pages>
 </dataset>
