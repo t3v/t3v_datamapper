@@ -6,6 +6,8 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Updated database fixtures
+* Updated dependencies
 * Updated AppVeyor configuration
 
 2.3.0
