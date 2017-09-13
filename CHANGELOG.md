@@ -3,6 +3,11 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
+Unreleased
+----------
+
+* Updated Travis CI and AppVeyor configuration
+
 2.3.1
 -----
 
@@ -16,7 +21,7 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 * Streamlined `getConnection` in `DatabaseService`
 * Added configuration option for driver used in the Laravel Capsule instance
 * Formatted code and cleanup
-* Update Composer configuration
+* Updated Composer configuration
 * Updated AppVeyor configuration
 
 2.2.2
@@ -28,7 +33,7 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 -----
 
 * Updated dependencies
-* Update Travis CI and AppVeyor configuration
+* Updated Travis CI and AppVeyor configuration
 * Cleaned up
 
 2.2.0
