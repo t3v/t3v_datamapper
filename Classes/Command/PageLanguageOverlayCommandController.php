@@ -1,5 +1,5 @@
 <?php
-namespace T3v\T3vDataMapper\Command\Page;
+namespace T3v\T3vDataMapper\Command;
 
 use TYPO3\CMS\Core\Database\QueryGenerator;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -10,11 +10,11 @@ use T3v\T3vDataMapper\Domain\Model\Page\LanguageOverlay;
 use T3v\T3vDataMapper\Service\DatabaseService;
 
 /**
- * Language Overlay Command Controller Class
+ * Page Language Overlay Command Controller Class
  *
- * @package T3v\T3vDataMapper\Command\Page
+ * @package T3v\T3vDataMapper\Command
  */
-class LanguageOverlayCommandController extends AbstractCommandController {
+class PageLanguageOverlayCommandController extends AbstractCommandController {
   /**
    * The query generator
    *
@@ -147,7 +147,7 @@ class LanguageOverlayCommandController extends AbstractCommandController {
   }
 
   /**
-   * Helper function which gets execute before a command.
+   * Helper function which gets executed before a command.
    *
    * @return void
    */
