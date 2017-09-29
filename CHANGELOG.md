@@ -3,9 +3,10 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+3.0.0
+-----
 
+* Renamed `Page\LanguageOverlayCommandController` to `PageLanguageOverlayCommandController`
 * Updated Travis CI and AppVeyor configuration
 
 2.3.1

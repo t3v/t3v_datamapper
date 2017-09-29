@@ -23,9 +23,7 @@ Installation
 Commands
 --------
 
-### Page
-
-* Language Overlay Command
+* Page Language Overlay Command
 
     * List Action
     * Hide Action
