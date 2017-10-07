@@ -8,6 +8,8 @@
         ".idea"
       ],
       "file_exclude_patterns": [
+        "*.afdesign",
+        "*.svg",
         ".keep",
         "composer.lock"
       ]
