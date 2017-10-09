@@ -7,6 +7,6 @@ call_user_func(function($namespace, $extkey) {
   // === Commands ===
 
   if (TYPO3_MODE === 'BE') {
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][$extkey] = \T3v\T3vDataMapper\Command\Page\LanguageOverlayCommandController::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][$extkey] = \T3v\T3vDataMapper\Command\PageLanguageOverlayCommandController::class;
   }
 }, 't3v', $_EXTKEY);

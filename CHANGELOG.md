@@ -3,6 +3,11 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
+Unreleased
+----------
+
+* Fixed Command Controller registration (`PageLanguageOverlayCommandController`)
+
 3.0.0
 -----
 
