@@ -7,6 +7,9 @@ Unreleased
 ----------
 
 * Fixed Command Controller registration (`PageLanguageOverlayCommandController`)
+* Merged Extensions and Vendor TypoScript
+* Updated dependencies
+* Updated AppVeyor configuration
 
 3.0.0
 -----
