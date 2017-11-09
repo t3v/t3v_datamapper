@@ -1,25 +1,33 @@
-# === T3v DataMapper Configuration ===
+# --------------------------------
+# | T3v DataMapper Configuration |
+# --------------------------------
 
 plugin {
   tx_t3vdatamapper {
     persistence {
-      enableAutomaticCacheClearing = 1
+      enableAutomaticCacheClearing = {$plugin.tx_t3vdatamapper.persistence.enableAutomaticCacheClearing}
 
-      updateReferenceIndex = 1
+      storagePid = {$plugin.tx_t3vdatamapper.persistence.storagePid}
 
-      # storagePid = {$plugin.tx_t3vdatamapper.persistence.storagePid}
-    }
-
-    view {
-      layoutRootPath = {$plugin.tx_t3vdatamapper.view.layoutRootPath}
-
-      templateRootPath = {$plugin.tx_t3vdatamapper.view.templateRootPath}
-
-      partialRootPath = {$plugin.tx_t3vdatamapper.view.partialRootPath}
+      updateReferenceIndex = {$plugin.tx_t3vdatamapper.persistence.updateReferenceIndex}
     }
 
     settings {
       languageOverlay = {$plugin.tx_t3vdatamapper.settings.languageOverlay}
+    }
+
+    view {
+      layoutRootPaths {
+        0 = {$plugin.tx_t3vdatamapper.view.layoutRootPath}
+      }
+
+      templateRootPaths {
+        0 = {$plugin.tx_t3vdatamapper.view.templateRootPath}
+      }
+
+      partialRootPaths {
+        0 = {$plugin.tx_t3vdatamapper.view.partialRootPath}
+      }
     }
   }
 }
