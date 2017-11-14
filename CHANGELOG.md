@@ -3,8 +3,8 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+4.0.0
+-----
 
 * Refactored TypoScript
 * Updated constants and configuration
