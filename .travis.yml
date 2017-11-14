@@ -28,8 +28,6 @@ language: php
 matrix:
   fast_finish: true
   include:
-    - php: 5.6
-      env: TYPO3_VERSION="^7.6"
     - php: 7.0
       env: TYPO3_VERSION="^7.6"
     - php: 7.0
@@ -50,7 +48,6 @@ notifications:
     - dev@bitaculous.com
 
 # php:
-#   - 5.6
 #   - 7.0
 #   - 7.1
 

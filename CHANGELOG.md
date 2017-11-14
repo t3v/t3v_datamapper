@@ -6,11 +6,13 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Refactored TypoScript
 * Updated constants and configuration
-* Fixed Command Controller registration (`PageLanguageOverlayCommandController`)
 * Merged Extensions and Vendor TypoScript
-* Updated dependencies
+* Fixed Command Controller registration (`PageLanguageOverlayCommandController`)
 * Updated AppVeyor configuration
+* Updated dependencies
+* Dropped support for PHP 5.x
 
 3.0.0
 -----
