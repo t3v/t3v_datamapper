@@ -33,14 +33,14 @@ class RenderingTest extends FunctionalTestCase {
    */
   public function templateIsRendered() {
     $expectedDom = new \DomDocument();
-    $expectedDom->loadHTML('<h1>T3v DataMapper</h1>');
     $expectedDom->preserveWhiteSpace = false;
+    $expectedDom->loadHTML('<h1>T3v DataMapper</h1>');
 
     $actualDom = new \DomDocument();
-    $actualDom->loadHTML($this->fetchFrontendResponse(['id' => '1'])->getContent());
     $actualDom->preserveWhiteSpace = false;
+    $actualDom->loadHTML($this->fetchFrontendResponse(['id' => '1'])->getContent());
 
-    $this->assertEquals($expectedDom->saveHTML(), $actualDom->saveHTML());
+    $this->assertXmlStringEqualsXmlString($expectedDom->saveHTML(), $actualDom->saveHTML());
   }
 
   /**
