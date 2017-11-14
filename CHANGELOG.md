@@ -90,6 +90,7 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 1.0.0
 -----
 
+* First release
 * Improved `PageService` and `PageViewHelper`
 * Configured Travis CI
 * Added unit and functional tests
