@@ -6,6 +6,7 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Updated TypoScript
 * Updated dependencies
 * Fixed functional tests
 
