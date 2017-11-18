@@ -18,18 +18,18 @@ plugin {
     }
 
     settings {
-      # cat=plugin/tx_t3vdatamapper/settings; type=boolean; label=If set, the language record (overlay) will be applied
+      # cat=plugin/tx_t3vdatamapper/settings; type=boolean; label=If set, the language overlay record will be applied
       languageOverlay = 1
     }
 
     view {
-      # cat=plugin/tx_t3vdatamapper/view; type=string; label=The default path to the layouts
+      # cat=plugin/tx_t3vdatamapper/view; type=string; label=The path where the layouts are stored
       layoutRootPath = EXT:t3v_datamapper/Resources/Private/Layouts/
 
-      # cat=plugin/tx_t3vdatamapper/view; type=string; label=The default path to the templates
+      # cat=plugin/tx_t3vdatamapper/view; type=string; label=The path where the templates are stored
       templateRootPath = EXT:t3v_datamapper/Resources/Private/Templates/
 
-      # cat=plugin/tx_t3vdatamapper/view; type=string; label=The default path to the partials
+      # cat=plugin/tx_t3vdatamapper/view; type=string; label=The path where the partials are stored
       partialRootPath = EXT:t3v_datamapper/Resources/Private/Partials/
     }
   }
