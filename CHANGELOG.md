@@ -9,6 +9,7 @@ Unreleased
 * Updated TypoScript
 * Updated dependencies
 * Fixed functional tests
+* Updated AppVeyor configuration
 
 4.0.0
 -----
