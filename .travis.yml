@@ -14,6 +14,10 @@ before_script:
   - export VENDOR_PATH="$BUILD_PATH/vendor"
   - export TYPO3_PATH_WEB="$BUILD_PATH/Web"
   - export TESTING_FRAMEWORK_PATH="$VENDOR_PATH/nimut/testing-framework/res/Configuration";
+  - export typo3DatabaseHost="localhost";
+  - export typo3DatabaseUsername="root";
+  - export typo3DatabasePassword="";
+  - export typo3DatabaseName="t3v_datamapper";
 
 branches:
   except:
@@ -55,22 +59,24 @@ notifications:
 #   - 7.2
 
 script:
-  - >
-    echo;
-    echo "Running unit tests...";
-    $BIN_PATH/phpunit --colors -c $TESTING_FRAMEWORK_PATH/UnitTests.xml Tests/Unit
-
   # - >
-  #   echo;
   #   echo "Running PHP linter...";
   #   find . -name \*.php ! -path "$BUILD_PATH/*" | parallel --gnu php -d display_errors=stderr -l {} > /dev/null \;
 
   - >
-    echo;
-    export typo3DatabaseHost="localhost";
-    export typo3DatabaseUsername="root";
-    export typo3DatabasePassword="";
-    export typo3DatabaseName="typo3";
-    find 'Tests/Functional' -wholename '*Test.php' | parallel --gnu 'echo; echo "Running functional test suite ({})..."; $BIN_PATH/phpunit --colors -c $TESTING_FRAMEWORK_PATH/FunctionalTests.xml {}'
+    echo "Running unit tests...";
+    $BIN_PATH/phpunit --colors --configuration $TESTING_FRAMEWORK_PATH/UnitTests.xml Tests/Unit
+
+  # - >
+  #   echo "Running unit tests in parallel...";
+  #   find "Tests/Unit" -wholename "*Test.php" | parallel --gnu "$BIN_PATH/phpunit --colors --configuration $TESTING_FRAMEWORK_PATH/UnitTests.xml {}"
+
+  - >
+    echo "Running functional tests...";
+    $BIN_PATH/phpunit --colors --configuration $TESTING_FRAMEWORK_PATH/FunctionalTests.xml Tests/Functional
+
+  # - >
+  #   echo "Running functional tests in parallel...";
+  #   find "Tests/Functional" -wholename "*Test.php" | parallel --gnu "$BIN_PATH/phpunit --colors --configuration $TESTING_FRAMEWORK_PATH/FunctionalTests.xml {}"
 
 sudo: false

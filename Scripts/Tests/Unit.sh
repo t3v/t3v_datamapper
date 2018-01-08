@@ -10,4 +10,6 @@ export TESTING_FRAMEWORK_PATH="$VENDOR_PATH/nimut/testing-framework/res/Configur
 
 # === Unit Tests ===
 
-$BIN_PATH/phpunit --colors -c $TESTING_FRAMEWORK_PATH/UnitTests.xml Tests/Unit
+$BIN_PATH/phpunit --colors --configuration $TESTING_FRAMEWORK_PATH/UnitTests.xml Tests/Unit
+
+# find "Tests/Unit" -wholename "*Test.php" | parallel --gnu "$BIN_PATH/phpunit --colors --configuration $TESTING_FRAMEWORK_PATH/UnitTests.xml {}"
