@@ -16,7 +16,7 @@ use T3v\T3vDataMapper\Service\DatabaseService;
  */
 class PageLanguageOverlayCommandController extends AbstractCommandController {
   /**
-   * The query generator
+   * The query generator.
    *
    * @var \TYPO3\CMS\Core\Database\QueryGenerator
    * @inject
@@ -24,7 +24,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
   protected $queryGenerator;
 
   /**
-   * The database service
+   * The database service.
    *
    * @var \T3v\T3vDataMapper\Service\DatabaseService
    * @inject

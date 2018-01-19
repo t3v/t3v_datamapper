@@ -10,7 +10,7 @@ use T3v\T3vDataMapper\Domain\Model\AbstractModel;
  */
 class Page extends AbstractModel {
   /**
-   * The table associated with the model.
+   * The name of the table associated with the model.
    *
    * @var string
    */

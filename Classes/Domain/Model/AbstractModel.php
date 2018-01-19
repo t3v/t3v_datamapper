@@ -13,6 +13,8 @@ abstract class AbstractModel extends Model {
   const UPDATED_AT = 'tstamp';
 
   /**
+   * The primary key.
+   *
    * Overwrites the default table identifier.
    *
    * @var string

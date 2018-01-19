@@ -15,7 +15,7 @@ use T3v\T3vCore\Service\AbstractService;
  */
 class ValidatorService extends AbstractService {
   /**
-   * Get the validator factory.
+   * Get the validator (factory).
    *
    * @param string $locale The optional locale, defaults to `en_US`
    * @return \Illuminate\Validation\Factory The validator factory
