@@ -15,6 +15,10 @@ plugin {
     }
 
     settings {
+      extbase {
+        controllerExtensionName = {$plugin.tx_t3vdatamapper.settings.extbase.controllerExtensionName}
+      }
+
       languageOverlay = {$plugin.tx_t3vdatamapper.settings.languageOverlay}
     }
 
