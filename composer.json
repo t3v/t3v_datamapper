@@ -30,8 +30,8 @@
   },
   "license": "MIT",
   "config": {
-    "bin-dir": ".Build/bin",
-    "vendor-dir": ".Build/vendor"
+    "bin-dir": ".build/bin",
+    "vendor-dir": ".build/vendor"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -63,20 +63,20 @@
   "autoload-dev": {
     "psr-4": {
       "T3v\\T3vDataMapper\\Tests\\": "Tests",
-      "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests",
-      "TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests"
+      "TYPO3\\CMS\\Core\\Tests\\": ".build/vendor/typo3/cms/typo3/sysext/core/Tests",
+      "TYPO3\\CMS\\Fluid\\Tests\\": ".build/vendor/typo3/cms/typo3/sysext/fluid/Tests"
     }
   },
   "extra": {
     "typo3/cms": {
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
-      "web-dir": ".Build/Web"
+      "web-dir": ".build/web"
     }
   },
   "scripts": {
     "post-autoload-dump": [
-      "mkdir -p .Build/Web/typo3conf/ext/",
-      "[ -L .Build/Web/typo3conf/ext/t3v_datamapper ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/t3v_datamapper"
+      "mkdir -p .build/web/typo3conf/ext/",
+      "[ -L .build/web/typo3conf/ext/t3v_datamapper ] || ln -snvf ../../../../. .build/web/typo3conf/ext/t3v_datamapper"
     ]
   }
 }

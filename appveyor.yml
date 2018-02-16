@@ -31,4 +31,4 @@ install:
 
 test_script:
   - cd c:\projects\t3v_datamapper
-  - $PWD/.Build\bin\phpunit\phpunit.bat -c $PWD/.Build/vendor/nimut/testing-framework/res/Configuration/UnitTests.xml Tests/Unit
+  - $PWD/.build\bin\phpunit\phpunit.bat -c $PWD/.build/vendor/nimut/testing-framework/res/Configuration/UnitTests.xml Tests/Unit

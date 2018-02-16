@@ -4,7 +4,7 @@
       "name": "t3v_datamapper",
       "path": "./",
       "folder_exclude_patterns": [
-        ".Build",
+        ".build",
         ".idea"
       ],
       "file_exclude_patterns": [

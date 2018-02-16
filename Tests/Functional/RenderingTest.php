@@ -87,7 +87,7 @@ class RenderingTest extends FunctionalTestCase {
     $template->setVar([
       'arguments'    => var_export($arguments, true),
       'originalRoot' => ORIGINAL_ROOT,
-      'ntfRoot'      => __DIR__ . '/../../.Build/vendor/nimut/testing-framework/'
+      'ntfRoot'      => __DIR__ . '/../../.build/vendor/nimut/testing-framework/'
     ]);
 
     $factory = \PHPUnit_Util_PHP::factory();

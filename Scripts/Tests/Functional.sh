@@ -2,10 +2,10 @@
 
 # === Exports ===
 
-export BUILD_PATH="$PWD/.Build"
+export BUILD_PATH="$PWD/.build"
 export BIN_PATH="$BUILD_PATH/bin"
 export VENDOR_PATH="$BUILD_PATH/vendor"
-export TYPO3_PATH_WEB="$BUILD_PATH/Web"
+export TYPO3_PATH_WEB="$BUILD_PATH/web"
 export TESTING_FRAMEWORK_PATH="$VENDOR_PATH/nimut/testing-framework/res/Configuration";
 
 export typo3DatabaseHost="localhost";
