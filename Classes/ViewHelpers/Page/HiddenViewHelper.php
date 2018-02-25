@@ -10,7 +10,7 @@ use T3v\T3vCore\ViewHelpers\AbstractConditionViewHelper;
 use T3v\T3vDataMapper\Service\PageService;
 
 /**
- * Hidden View Helper Class
+ * The hidden view helper class.
  *
  * @package T3v\T3vDataMapper\ViewHelpers\Page
  */
@@ -27,7 +27,7 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
   }
 
   /**
-   * Evaluate the condition.
+   * Evaluates the condition.
    *
    * @param array|null $arguments The arguments
    * @return boolean Whether the condition is fulfilled

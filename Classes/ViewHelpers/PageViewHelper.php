@@ -6,7 +6,7 @@ use T3v\T3vCore\ViewHelpers\AbstractViewHelper;
 use T3v\T3vDataMapper\Service\PageService;
 
 /**
- * Page View Helper Class
+ * The page view helper class.
  *
  * @package T3v\T3vDataMapper\ViewHelpers
  */

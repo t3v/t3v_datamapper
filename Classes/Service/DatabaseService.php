@@ -6,7 +6,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 use T3v\T3vCore\Service\AbstractService;
 
 /**
- * Database Service Class
+ * The database service class.
  *
  * @package T3v\T3vDataMapper\Service
  */

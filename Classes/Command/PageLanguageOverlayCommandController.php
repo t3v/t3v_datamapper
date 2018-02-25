@@ -10,7 +10,7 @@ use T3v\T3vDataMapper\Domain\Model\Page\LanguageOverlay;
 use T3v\T3vDataMapper\Service\DatabaseService;
 
 /**
- * Page Language Overlay Command Controller Class
+ * The page language overlay command controller class.
  *
  * @package T3v\T3vDataMapper\Command
  */

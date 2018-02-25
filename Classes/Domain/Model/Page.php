@@ -4,7 +4,7 @@ namespace T3v\T3vDataMapper\Domain\Model;
 use T3v\T3vDataMapper\Domain\Model\AbstractModel;
 
 /**
- * Page Class
+ * The page class.
  *
  * @package T3v\T3vDataMapper\Domain\Model
  */

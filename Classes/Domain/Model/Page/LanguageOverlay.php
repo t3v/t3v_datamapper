@@ -4,7 +4,7 @@ namespace T3v\T3vDataMapper\Domain\Model\Page;
 use T3v\T3vDataMapper\Domain\Model\AbstractModel;
 
 /**
- * Language Overlay Class
+ * The language overlay class.
  *
  * @package T3v\T3vDataMapper\Domain\Model\Page
  */

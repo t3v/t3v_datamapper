@@ -4,13 +4,13 @@ namespace T3v\T3vDataMapper\ViewHelpers\Page;
 use T3v\T3vDataMapper\ViewHelpers\Page\HiddenViewHelper;
 
 /**
- * Visible View Helper Class
+ * The visible view helper class.
  *
  * @package T3v\T3vDataMapper\ViewHelpers\Page
  */
 class VisibleViewHelper extends HiddenViewHelper {
   /**
-   * Evaluate the condition.
+   * Evaluates the condition.
    *
    * @param array|null $arguments The arguments
    * @return boolean Whether the condition is fulfilled

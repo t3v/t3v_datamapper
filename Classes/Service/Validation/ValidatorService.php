@@ -9,7 +9,7 @@ use Symfony\Component\Translation\Translator;
 use T3v\T3vCore\Service\AbstractService;
 
 /**
- * Validator Service Class
+ * The validator service class.
  *
  * @package T3v\T3vDataMapper\Service\Validation
  */

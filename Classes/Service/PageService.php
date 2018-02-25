@@ -11,7 +11,7 @@ use T3v\T3vDataMapper\Domain\Model\Page\LanguageOverlay;
 use T3v\T3vDataMapper\Service\DatabaseService;
 
 /**
- * Page Service Class
+ * The page service class.
  *
  * @package T3v\T3vDataMapper\Service
  */
