@@ -6,6 +6,7 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Updated Travis CI and AppVeyor configuration
 * Updated constraints to TYPO3 7.6
 
 4.3.0

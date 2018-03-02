@@ -20,7 +20,7 @@ class PageViewHelper extends AbstractViewHelper {
   protected $pageService;
 
   /**
-   * The View Helper render function.
+   * The view helper render function.
    *
    * @param int $uid The UID of the page
    * @param boolean $languageOverlay If set, the language record (overlay) will be applied

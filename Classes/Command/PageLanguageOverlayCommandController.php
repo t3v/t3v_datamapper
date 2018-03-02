@@ -147,7 +147,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
   }
 
   /**
-   * Helper function which gets executed before a command.
+   * Gets executed before a command.
    *
    * @return void
    */
