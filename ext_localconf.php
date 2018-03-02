@@ -1,12 +1,14 @@
 <?php
-defined('TYPO3_MODE') or die('Access denied.');
+defined('TYPO3_MODE') or die();
 
-call_user_func(function($namespace, $extkey) {
-  $extensionSignature = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($namespace . '.' . $extkey);
+// === Variables ===
 
-  // === Commands ===
+$namespace          = 't3v';
+$extensionKey       = $_EXTKEY;
+$extensionSignature = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($namespace . '.' . $extensionKey);
 
-  if (TYPO3_MODE === 'BE') {
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][$extkey] = \T3v\T3vDataMapper\Command\PageLanguageOverlayCommandController::class;
-  }
-}, 't3v', $_EXTKEY);
+// === Extbase Commands ===
+
+if (TYPO3_MODE === 'BE') {
+  $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][$extensionKey] = \T3v\T3vDataMapper\Command\PageLanguageOverlayCommandController::class;
+}
