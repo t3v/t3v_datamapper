@@ -8,7 +8,9 @@ before_install:
   - if php -i | grep -q xdebug; then phpenv config-rm xdebug.ini; fi
 
 before_script:
-  - composer require typo3/cms="$TYPO3_VERSION"
+  - TYPO3_VERSION_DIGITS=${TYPO3_VERSION//[^[:digit:]]/}
+  - TYPO3_MAJOR_VERSION="${TYPO3_VERSION_DIGITS::1}"
+  - if [ $TYPO3_MAJOR_VERSION -ge 9 ]; then composer require typo3/minimal="$TYPO3_VERSION"; else composer require typo3/cms="$TYPO3_VERSION"; fi
   - export BUILD_PATH="$PWD/.build"
   - export BIN_PATH="$BUILD_PATH/bin"
   - export VENDOR_PATH="$BUILD_PATH/vendor"
@@ -33,21 +35,15 @@ matrix:
   fast_finish: true
   include:
     - php: 7.0
-      env: TYPO3_VERSION="^7.6"
-    - php: 7.0
       env: TYPO3_VERSION="^8.7"
     - php: 7.1
-      env: TYPO3_VERSION="^7.6"
-    - php: 7.1
       env: TYPO3_VERSION="^8.7"
-    # - php: 7.2
-    #   env: TYPO3_VERSION="^7.6"
     # - php: 7.2
     #   env: TYPO3_VERSION="^8.7"
-    # - php: 7.2
-    #   env: TYPO3_VERSION="dev-master as 9.0"
+    - php: 7.2
+      env: TYPO3_VERSION="dev-master as 9.1"
   allow_failures:
-    - env: TYPO3_VERSION="dev-master as 9.0"
+    - env: TYPO3_VERSION="dev-master as 9.1"
 
 notifications:
   email:

@@ -6,6 +6,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Nimut\TestingFramework\Http\Response;
 use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 
+use PHPUnit\Util\PHP\DefaultPhpProcess;
+
 /**
  * Rendering Test Class
  *
@@ -90,11 +92,9 @@ class RenderingTest extends FunctionalTestCase {
       'ntfRoot'      => __DIR__ . '/../../.build/vendor/nimut/testing-framework/'
     ]);
 
-    $factory = \PHPUnit_Util_PHP::factory();
-
-    $response = $factory->runJob($template->render());
-
-    $result = json_decode($response['stdout'], true);
+    $php      = DefaultPhpProcess::factory();
+    $response = $php->runJob($template->render());
+    $result   = json_decode($response['stdout'], true);
 
     if ($result === null) {
       $this->fail('Frontend Response is empty:' . LF . 'Error: ' . LF . $response['stderr']);
