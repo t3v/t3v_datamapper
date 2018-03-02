@@ -6,7 +6,7 @@ use Nimut\TestingFramework\TestCase\UnitTestCase;
 use T3v\T3vDataMapper\Tests\Unit\Fixtures\LoadableClass;
 
 /**
- * First Class Test Class
+ * The first class test class.
  *
  * @package T3v\T3vDataMapper\Tests\Unit
  */
