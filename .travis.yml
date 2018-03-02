@@ -34,20 +34,10 @@ matrix:
   include:
     - php: 7.0
       env: TYPO3_VERSION="^7.6"
-    - php: 7.0
-      env: TYPO3_VERSION="^8.7"
     - php: 7.1
       env: TYPO3_VERSION="^7.6"
-    - php: 7.1
-      env: TYPO3_VERSION="^8.7"
     # - php: 7.2
     #   env: TYPO3_VERSION="^7.6"
-    # - php: 7.2
-    #   env: TYPO3_VERSION="^8.7"
-    # - php: 7.2
-    #   env: TYPO3_VERSION="dev-master as 9.0"
-  allow_failures:
-    - env: TYPO3_VERSION="dev-master as 9.0"
 
 notifications:
   email:
