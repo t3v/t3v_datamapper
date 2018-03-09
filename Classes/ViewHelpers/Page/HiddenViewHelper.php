@@ -46,7 +46,7 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
   }
 
   /**
-   * Helper function to get the language service.
+   * Gets the language service.
    *
    * @return \T3v\T3vCore\Service\LanguageService The language service
    */
@@ -58,7 +58,7 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
   }
 
   /**
-   * Helper function to get the page service.
+   * Gets the page service.
    *
    * @return \T3v\T3vDataMapper\Service\PageService The page service
    */

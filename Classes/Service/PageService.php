@@ -54,7 +54,7 @@ class PageService extends AbstractService {
   }
 
   /**
-   * Get a page by UID.
+   * Gets a page by UID.
    *
    * @param int $uid The UID of the page
    * @param boolean $languageOverlay If set, the language record (overlay) will be applied
@@ -114,7 +114,7 @@ class PageService extends AbstractService {
   }
 
   /**
-   * Get the current page.
+   * Gets the current page.
    *
    * @param boolean $languageOverlay If set, the language record (overlay) will be applied
    * @param int $languageUid The optional language UID, defaults to the UID of the current system language
@@ -129,7 +129,7 @@ class PageService extends AbstractService {
   }
 
   /**
-   * Helper function to get the settings from `plugin.tx_t3vdatamapper.settings`.
+   * Gets the settings from `plugin.tx_t3vdatamapper.settings`.
    *
    * @return array The settings
    */
