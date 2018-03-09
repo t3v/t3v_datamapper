@@ -6,6 +6,7 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Improved `DatabaseService`
 * Updated Tests
 * Updated Travis CI and AppVeyor configuration
 * Updated dependencies
