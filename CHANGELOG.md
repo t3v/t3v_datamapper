@@ -3,10 +3,13 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+4.4.0
+-----
 
+* Cleaned up `DatabaseService`
+* Updated Tests
 * Updated Travis CI and AppVeyor configuration
+* Updated dependencies
 * Updated constraints to TYPO3 7.6
 
 4.3.0
