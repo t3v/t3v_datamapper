@@ -39,31 +39,16 @@ class DatabaseService extends AbstractService {
   protected static function getConnection() {
     $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3v_datamapper']);
 
-    $connection = [];
-
-    if (is_array($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections'])) {
-      $connection = [
-        'driver'    => $extensionConfiguration['driver'] ?: 'mysql',
-        'host'      => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'],
-        'username'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user'],
-        'password'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'],
-        'database'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'],
-        'charset'   => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['charset'] ?: 'utf8',
-        'collation' => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['collation'] ?: 'utf8_general_ci',
-        'prefix'    => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['prefix'] ?: ''
-      ];
-    } else {
-      $connection = [
-        'driver'    => $extensionConfiguration['driver'] ?: 'mysql',
-        'host'      => $GLOBALS['TYPO3_CONF_VARS']['DB']['host'],
-        'username'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['username'],
-        'password'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['password'],
-        'database'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['database'],
-        'charset'   => $GLOBALS['TYPO3_CONF_VARS']['DB']['charset'] ?: 'utf8',
-        'collation' => $GLOBALS['TYPO3_CONF_VARS']['DB']['collation'] ?: 'utf8_general_ci',
-        'prefix'    => $GLOBALS['TYPO3_CONF_VARS']['DB']['prefix'] ?: ''
-      ];
-    }
+    $connection = [
+      'driver'    => $extensionConfiguration['driver'] ?: 'mysql',
+      'host'      => $GLOBALS['TYPO3_CONF_VARS']['DB']['host'],
+      'username'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['username'],
+      'password'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['password'],
+      'database'  => $GLOBALS['TYPO3_CONF_VARS']['DB']['database'],
+      'charset'   => $GLOBALS['TYPO3_CONF_VARS']['DB']['charset'] ?: 'utf8',
+      'collation' => $GLOBALS['TYPO3_CONF_VARS']['DB']['collation'] ?: 'utf8_general_ci',
+      'prefix'    => $GLOBALS['TYPO3_CONF_VARS']['DB']['prefix'] ?: ''
+    ];
 
     return $connection;
   }
