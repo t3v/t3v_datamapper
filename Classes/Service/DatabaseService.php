@@ -37,7 +37,11 @@ class DatabaseService extends AbstractService {
    * @link https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/GlobalValues/GlobalVariables The TYPO3 Global variables
    */
   protected static function getConnection() {
-    $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3v_datamapper']);
+    $extensionConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3v_datamapper'];
+
+    if (is_string($extensionConfiguration)) {
+      $extensionConfiguration = @unserialize($extensionConfiguration);
+    }
 
     $connection = [
       'driver'    => $extensionConfiguration['driver'] ?: 'mysql',

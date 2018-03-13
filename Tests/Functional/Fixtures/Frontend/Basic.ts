@@ -1,3 +1,5 @@
+# === Configuration ===
+
 config {
   # --- Common ---
 
@@ -11,7 +13,15 @@ config {
 
   contentObjectExceptionHandler = 0
 
-  # --- i18n ---
+  # --- URL / Link Handling ---
+
+  # HTTP GET parameters which should be passed on with links in TYPO3.
+  linkVars = L(0-1)
+
+  # Prefixes all links with a `/`, resulting in absolute link paths.
+  absRefPrefix = /
+
+  # --- L10n ---
 
   sys_language_uid = 0
 
@@ -27,29 +37,24 @@ config {
 
   sys_language_overlay = 1
 
-  linkVars = L(0-10)
-
-  # --- URL / Links Handling ---
-
-  absRefPrefix = /
-
-  prefixLocalAnchors = 1
-
   # --- Misc ---
 
-  # Deactivate Admin-Panel
+  # Settings for the spam protection of email addresses:
+  spamProtectEmailAddresses              = 1
+  spamProtectEmailAddresses_atSubst      = &#64;
+  spamProtectEmailAddresses_lastDotSubst = .
+
+  # En-/disables the Admin-Panel.
   admPanel = 0
 
-  # Deactivate extra debug information as comment in HTML code
+  # En-/disables the extra debug information as comment in the HTML code.
   debug = 0
 
-  # Disable prefix comments
+  # Disables the prefix comments.
   disablePrefixComment = 1
-
-  # Spam prodection for email addresses
-  spamProtectEmailAddresses         = 2
-  spamProtectEmailAddresses_atSubst = (at)
 }
+
+# === Page ===
 
 page = PAGE
 page {
@@ -58,6 +63,8 @@ page {
     file = EXT:t3v_datamapper/Tests/Functional/Fixtures/Frontend/Template.html
   }
 }
+
+# === Locales ===
 
 [globalVar = GP:L = 1]
 config {
