@@ -45,7 +45,11 @@ class DatabaseService extends AbstractService {
     $configuration = [];
 
     if (is_array($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections'][$connection])) {
-      $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3v_datamapper']);
+      $extensionConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3v_datamapper'];
+
+      if (is_string($extensionConfiguration)) {
+        $extensionConfiguration = @unserialize($extensionConfiguration);
+      }
 
       $configuration = [
         'driver'    => $extensionConfiguration['driver'] ?: 'mysql',

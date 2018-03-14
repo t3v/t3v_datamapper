@@ -38,15 +38,16 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
    * @param int $pid The optional PID of the page to search from, defaults to `1`
    * @param int $recursion The optional recursion, defaults to `99`
    * @param string $exclude The optional UIDs of pages to exclude as string, seperated by `,`, empty by default
-   * @return void
+   * @param boolean $verbose The optional verbosity, defaults to `false`
    */
-  public function listCommand($sysLanguageUid, $pid = 1, $recursion = 99, $exclude = '') {
+  public function listCommand($sysLanguageUid, $pid = 1, $recursion = 99, $exclude = '', $verbose = false) {
     $this->beforeCommand();
 
     $sysLanguageUid = intval($sysLanguageUid);
     $pid            = intval($pid);
     $recursion      = intval($recursion);
     $exclude        = GeneralUtility::intExplode(',', $exclude, true);
+    $verbose        = (boolean) $verbose;
     $pagesTreeList  = $this->queryGenerator->getTreeList($pid, $recursion, 0, 1);
     $pageUids       = GeneralUtility::intExplode(',', $pagesTreeList, true);
     $pageUids       = array_diff($pageUids, $exclude);
@@ -59,7 +60,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
         $title  = $languageOverlay->title;
         $status = $languageOverlay->hidden ? 'hidden' : 'visible';
 
-        $this->log("{$title} ({$uid}) [{$status}]");
+        $this->log("{$title} ({$uid}) [{$status}]", 'info', $verbose);
       }
     }
   }
@@ -71,7 +72,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
    * @param int $pid The optional PID of the page to search from, defaults to `1`
    * @param int $recursion The optional recursion, defaults to `99`
    * @param string $exclude The optional UIDs of pages to exclude as string, seperated by `,`, empty by default
-   * @return void
+   * @param boolean $verbose The optional verbosity, defaults to `false`
    */
   public function hideCommand($sysLanguageUid, $pid = 1, $recursion = 99, $exclude = '') {
     $this->beforeCommand();
@@ -80,6 +81,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
     $pid            = intval($pid);
     $recursion      = intval($recursion);
     $exclude        = GeneralUtility::intExplode(',', $exclude, true);
+    $verbose        = (boolean) $verbose;
     $pagesTreeList  = $this->queryGenerator->getTreeList($pid, $recursion, 0, 1);
     $pageUids       = GeneralUtility::intExplode(',', $pagesTreeList, true);
     $pageUids       = array_diff($pageUids, $exclude);
@@ -94,12 +96,12 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
           $uid    = $languageOverlay->uid;
           $title  = $languageOverlay->title;
 
-          $this->log("Hiding {$title} ({$uid})...", 'info');
+          $this->log("Hiding {$title} ({$uid})...", 'info', $verbose);
 
           $languageOverlay->hidden = true;
           $languageOverlay->save();
 
-          $this->log("{$title} ({$uid}) is hidden.", 'ok');
+          $this->log("{$title} ({$uid}) is hidden.", 'ok', $verbose);
         }
       }
     }
@@ -112,7 +114,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
    * @param int $pid The optional PID of the page to search from, defaults to `1`
    * @param int $recursion The optional recursion, defaults to `99`
    * @param string $exclude The optional UIDs of pages to exclude as string, seperated by `,`, empty by default
-   * @return void
+   * @param boolean $verbose The optional verbosity, defaults to `false`
    */
   public function unhideCommand($sysLanguageUid, $pid = 1, $recursion = 99, $exclude = '') {
     $this->beforeCommand();
@@ -121,6 +123,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
     $pid            = intval($pid);
     $recursion      = intval($recursion);
     $exclude        = GeneralUtility::intExplode(',', $exclude, true);
+    $verbose        = (boolean) $verbose;
     $pagesTreeList  = $this->queryGenerator->getTreeList($pid, $recursion, 0, 1);
     $pageUids       = GeneralUtility::intExplode(',', $pagesTreeList, true);
     $pageUids       = array_diff($pageUids, $exclude);
@@ -135,12 +138,12 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
           $uid    = $languageOverlay->uid;
           $title  = $languageOverlay->title;
 
-          $this->log("Unhiding {$title} ({$uid})...", 'info');
+          $this->log("Unhiding {$title} ({$uid})...", 'info', $verbose);
 
           $languageOverlay->hidden = false;
           $languageOverlay->save();
 
-          $this->log("{$title} ({$uid}) is visible.", 'ok');
+          $this->log("{$title} ({$uid}) is visible.", 'ok', $verbose);
         }
       }
     }
@@ -148,8 +151,6 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
 
   /**
    * Gets executed before a command.
-   *
-   * @return void
    */
   protected function beforeCommand() {
     $this->databaseService->setup();
