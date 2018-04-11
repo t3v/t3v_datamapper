@@ -7,6 +7,7 @@ $extensionKey = $_EXTKEY;
 
 // === Backend ===
 
+// Avoid that this block is loaded in the Frontend
 if (TYPO3_MODE === 'BE') {
   // --- Extbase Command Controllers ---
 

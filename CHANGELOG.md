@@ -6,7 +6,9 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Updated TypoScript structure
 * Improved `PageLanguageOverlayCommandController`
+* Updated AppVeyor configuration
 * Cleaned up
 
 5.0.0
