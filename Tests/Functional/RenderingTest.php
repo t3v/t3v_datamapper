@@ -53,7 +53,7 @@ class RenderingTest extends FunctionalTestCase {
 
     $this->importDataSet(__DIR__ . '/Fixtures/Database/Pages.xml');
 
-    $this->setUpFrontendRootPage(1, ['EXT:t3v_datamapper/Tests/Functional/Fixtures/Frontend/Basic.ts']);
+    $this->setUpFrontendRootPage(1, ['EXT:t3v_datamapper/Tests/Functional/Fixtures/Frontend/Basic.typoscript']);
   }
 
   /**
