@@ -7,7 +7,7 @@ Unreleased
 ----------
 
 * Updated TypoScript structure
-* Improved `PageLanguageOverlayCommandController`
+* Fixed / improved `PageLanguageOverlayCommandController`
 * Updated AppVeyor configuration
 * Cleaned up
 
