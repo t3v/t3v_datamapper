@@ -19,7 +19,9 @@ plugin {
         controllerExtensionName = {$plugin.tx_t3vdatamapper.settings.extbase.controllerExtensionName}
       }
 
-      languageOverlay = {$plugin.tx_t3vdatamapper.settings.languageOverlay}
+      page {
+        hideNotTranslated = {$plugin.tx_t3vdatamapper.settings.page.hideNotTranslated}
+      }
     }
 
     view {

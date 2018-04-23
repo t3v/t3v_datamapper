@@ -17,13 +17,6 @@ use T3v\T3vDataMapper\Service\DatabaseService;
  */
 class PageService extends AbstractService {
   /**
-   * The configuration manager.
-   *
-   * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
-   */
-  protected $configurationManager;
-
-  /**
    * The database service.
    *
    * @var \T3v\T3vDataMapper\Service\DatabaseService
@@ -43,8 +36,6 @@ class PageService extends AbstractService {
   public function __construct() {
     parent::__construct();
 
-    $this->configurationManager = $this->objectManager->get(ConfigurationManagerInterface::class);
-
     $this->databaseService = $this->objectManager->get(DatabaseService::class);
     $this->databaseService->setup();
 
@@ -55,39 +46,28 @@ class PageService extends AbstractService {
    * Gets a page by UID.
    *
    * @param int $uid The UID of the page
-   * @param boolean $languageOverlay If set, the language record (overlay) will be applied
    * @param int $languageUid The optional language UID, defaults to the UID of the current system language
    * @return array The row for the page or empty if no page was found
    */
-  public function getPage($uid, $languageOverlay = null, $languageUid = null) {
-    $uid             = intval($uid);
-    $languageOverlay = isset($languageOverlay) ? (boolean) $languageOverlay : null;
-    $languageUid     = isset($languageUid) ? intval($languageUid) : $this->$languageService->getLanguageUid();
-
-    $settings             = $this->getSettings();
-    $applyLanguageOverlay = (boolean) $settings['languageOverlay'];
-
-    if (isset($languageOverlay)) {
-      $applyLanguageOverlay = $languageOverlay;
-    }
-
-    $page = Page::find($uid);
+  public function getPage(int $uid, int $languageUid = null) {
+    $languageUid = isset($languageUid) ? $languageUid : $this->$languageService->getLanguageUid();
+    $page        = Page::find($uid);
 
     if ($page) {
-      $page    = $page->getAttributes();
-      $l18nCfg = intval($page['l18n_cfg']);
+      $page              = $page->getAttributes();
+      $l18nCfg           = intval($page['l18n_cfg']);
+      $settings          = $this->getSettings();
+      $hideNotTranslated = (boolean) $settings['page.']['hideNotTranslated'];
 
       if ($l18nCfg === 1) {
         $page['hidden'] = '1';
       }
 
-      if ($applyLanguageOverlay && $languageUid > 0) {
+      if ($languageUid > 0 && $hideNotTranslated) {
         $overlay = LanguageOverlay::where([['pid', '=', $uid], ['sys_language_uid', '=', $languageUid]])->first();
 
         if ($overlay) {
-          $overlay = $overlay->getAttributes();
-
-          $page = array_merge($page, $overlay);
+          $page = array_merge($page, $overlay->getAttributes());
         }
       }
     }
@@ -99,31 +79,26 @@ class PageService extends AbstractService {
    * Alias for `getPage`.
    *
    * @param int $uid The UID of the page
-   * @param boolean $languageOverlay If set, the language record (overlay) will be applied
    * @param int $languageUid The optional language UID, defaults to the UID of the current system language
    * @return array The row for the page or empty if no page was found
    */
-  public function getPageByUid($uid, $languageOverlay = null, $languageUid = null) {
-    $uid             = intval($uid);
-    $languageOverlay = isset($languageOverlay) ? (boolean) $languageOverlay : null;
-    $languageUid     = isset($languageUid) ? intval($languageUid) : $this->$languageService->getLanguageUid();
+  public function getPageByUid(int $uid, int $languageUid = null) {
+    $languageUid = isset($languageUid) ? $languageUid : $this->$languageService->getLanguageUid();
 
-    return $this->getPage($uid, $languageOverlay, $languageUid);
+    return $this->getPage($uid, $languageUid);
   }
 
   /**
    * Gets the current page.
    *
-   * @param boolean $languageOverlay If set, the language record (overlay) will be applied
    * @param int $languageUid The optional language UID, defaults to the UID of the current system language
    * @return array The row for the current page or empty if no page was found
    */
-  public function getCurrentPage($languageOverlay = null, $languageUid = null) {
-    $uid             = intval($GLOBALS['TSFE']->id);
-    $languageOverlay = isset($languageOverlay) ? (boolean) $languageOverlay : null;
-    $languageUid     = isset($languageUid) ? intval($languageUid) : $this->$languageService->getLanguageUid();
+  public function getCurrentPage(int $languageUid = null) {
+    $languageUid = isset($languageUid) ? $languageUid : $this->$languageService->getLanguageUid();
+    $uid         = intval($GLOBALS['TSFE']->id);
 
-    return $this->getPage($uid, $languageOverlay, $languageUid);
+    return $this->getPage($uid, $languageUid);
   }
 
   /**
@@ -132,7 +107,8 @@ class PageService extends AbstractService {
    * @return array The settings
    */
   protected function getSettings() {
-    $configuration = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
+    $configurationManager = $this->objectManager->get(ConfigurationManagerInterface::class);
+    $configuration        = $configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
 
     return $configuration['plugin.']['tx_t3vdatamapper.']['settings.'];
   }
