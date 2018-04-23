@@ -40,7 +40,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
    * @param string $exclude The optional UIDs of pages to exclude as string, seperated by `,`, empty by default
    * @param boolean $verbose The optional verbosity, defaults to `false`
    */
-  public function listCommand(int $sysLanguageUid, int $pid = 1, int $recursion = 99, string $exclude = '', boolean $verbose = false) {
+  public function listCommand(int $sysLanguageUid, int $pid = 1, int $recursion = 99, string $exclude = '', $verbose = false) {
     $this->beforeCommand();
 
     $exclude        = GeneralUtility::intExplode(',', $exclude, true);
@@ -70,7 +70,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
    * @param string $exclude The optional UIDs of pages to exclude as string, seperated by `,`, empty by default
    * @param boolean $verbose The optional verbosity, defaults to `false`
    */
-  public function hideCommand(int $sysLanguageUid, int $pid = 1, int $recursion = 99, string $exclude = '', boolean $verbose = false) {
+  public function hideCommand(int $sysLanguageUid, int $pid = 1, int $recursion = 99, string $exclude = '', $verbose = false) {
     $this->beforeCommand();
 
     $exclude        = GeneralUtility::intExplode(',', $exclude, true);
@@ -108,7 +108,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
    * @param string $exclude The optional UIDs of pages to exclude as string, seperated by `,`, empty by default
    * @param boolean $verbose The optional verbosity, defaults to `false`
    */
-  public function unhideCommand(int $sysLanguageUid, int $pid = 1, int $recursion = 99, string $exclude = '', boolean $verbose = false) {
+  public function unhideCommand(int $sysLanguageUid, int $pid = 1, int $recursion = 99, string $exclude = '', $verbose = false) {
     $this->beforeCommand();
 
     $exclude        = GeneralUtility::intExplode(',', $exclude, true);
