@@ -16,9 +16,7 @@ class DatabaseService extends AbstractService {
    *
    * @param string $connection The optional connection, defaults to `Default`
    */
-  public static function setup($connection = 'Default') {
-    $connection = (string) $connection;
-
+  public static function setup(string $connection = 'Default') {
     // First, create a new `Capsule` manager instance. Capsule aims to make configuring the library for usage outside of
     // the Laravel framework as easy as possible.
     $capsule = new Capsule();
@@ -41,7 +39,7 @@ class DatabaseService extends AbstractService {
    * @link https://laravel.com/docs/master/database#configuration The Laravel Database Configuration
    * @link https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/GlobalValues/GlobalVariables The TYPO3 Global variables
    */
-  protected static function getConnection($connection = 'Default') {
+  protected static function getConnection(string $connection = 'Default') {
     $configuration = [];
 
     if (is_array($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections'][$connection])) {

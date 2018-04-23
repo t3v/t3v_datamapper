@@ -3,6 +3,14 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
+Unreleased
+----------
+
+* Changed TypoScript setting `languageOverlay` to `page.hideNotTranslated` (breaking change)
+* Refactored view helpers
+* Updated classes
+* Cleaned up
+
 5.1.0
 -----
 

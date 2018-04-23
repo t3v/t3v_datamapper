@@ -23,8 +23,10 @@ plugin {
         controllerExtensionName = T3vDataMapper
       }
 
-      # cat=plugin/tx_t3vdatamapper/settings; type=boolean; label=If set, the language overlay record will be applied
-      languageOverlay = 1
+      page {
+        # cat=plugin/tx_t3vdatamapper/settings/page; type=boolean; label=If set, not translated pages will be hidden
+        hideNotTranslated = 1
+      }
     }
 
     view {

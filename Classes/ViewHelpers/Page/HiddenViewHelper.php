@@ -22,8 +22,7 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
     parent::initializeArguments();
 
     $this->registerArgument('uid', 'int', 'The UID of the page', true);
-    $this->registerArgument('languageOverlay', 'boolean', 'If set, the language record (overlay) will be applied', false, null);
-    $this->registerArgument('languageUid', 'int', 'The optional language UID, defaults to the UID of the current system language', false, null);
+    $this->registerArgument('languageUid', 'int', 'The optional language UID', false, null);
   }
 
   /**
@@ -32,15 +31,11 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
    * @param array|null $arguments The arguments
    * @return boolean Whether the condition is fulfilled
    */
-  static protected function evaluateCondition($arguments = null) {
-    $languageService = self::getLanguageService();
-    $pageService     = self::getPageService();
-
-    $uid             = intval($arguments['uid']);
-    $languageOverlay = isset($arguments['languageOverlay']) ? (boolean) $arguments['languageOverlay'] : null;
-    $languageUid     = isset($arguments['languageUid']) ? intval($arguments['languageUid']) : $languageService->getLanguageUid();
-    $page            = $pageService->getPageByUid($uid, $languageOverlay, $languageUid);
-    $hidden          = (boolean) $page['hidden'];
+  protected static function evaluateCondition($arguments = null) {
+    $uid         = intval($arguments['uid']);
+    $languageUid = isset($arguments['languageUid']) ? intval($arguments['languageUid']) : self::getLanguageService()->getLanguageUid();
+    $page        = self::getPageService()->getPageByUid($uid, $languageUid);
+    $hidden      = (boolean) $page['hidden'];
 
     return $hidden;
   }
@@ -50,7 +45,7 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
    *
    * @return \T3v\T3vCore\Service\LanguageService The language service
    */
-  static protected function getLanguageService() {
+  protected static function getLanguageService() {
     $objectManager   = GeneralUtility::makeInstance(ObjectManager::class);
     $languageService = $objectManager->get(LanguageService::class);
 
@@ -62,7 +57,7 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
    *
    * @return \T3v\T3vDataMapper\Service\PageService The page service
    */
-  static protected function getPageService() {
+  protected static function getPageService() {
     $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
     $pageService   = $objectManager->get(PageService::class);
 

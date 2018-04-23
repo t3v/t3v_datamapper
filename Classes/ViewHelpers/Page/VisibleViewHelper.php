@@ -15,15 +15,11 @@ class VisibleViewHelper extends HiddenViewHelper {
    * @param array|null $arguments The arguments
    * @return boolean Whether the condition is fulfilled
    */
-  static protected function evaluateCondition($arguments = null) {
-    $languageService = self::getLanguageService();
-    $pageService     = self::getPageService();
-
-    $uid             = intval($arguments['uid']);
-    $languageOverlay = isset($arguments['languageOverlay']) ? (boolean) $arguments['languageOverlay'] : null;
-    $languageUid     = isset($arguments['languageUid']) ? intval($arguments['languageUid']) : $languageService->getLanguageUid();
-    $page            = $pageService->getPageByUid($uid, $languageOverlay, $languageUid);
-    $hidden          = (boolean) $page['hidden'];
+  protected static function evaluateCondition($arguments = null) {
+    $uid         = intval($arguments['uid']);
+    $languageUid = isset($arguments['languageUid']) ? intval($arguments['languageUid']) : self::getLanguageService()->getLanguageUid();
+    $page        = self::getPageService()->getPageByUid($uid, $languageUid);
+    $hidden      = (boolean) $page['hidden'];
 
     return !$hidden;
   }
