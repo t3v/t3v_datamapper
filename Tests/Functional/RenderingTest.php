@@ -60,12 +60,10 @@ class RenderingTest extends FunctionalTestCase {
    * Helper function to fetch the Frontend response.
    *
    * @param array $requestArguments The request arguments
-   * @param boolean $failOnFailure Fail on failure, defaults to `true`
+   * @param bool $failOnFailure Fail on failure, defaults to `true`
    * @return \Nimut\TestingFramework\Http\Response The Frontend response
    */
-  protected function fetchFrontendResponse(array $requestArguments, $failOnFailure = true) {
-    $failOnFailure = (boolean) $failOnFailure;
-
+  protected function fetchFrontendResponse(array $requestArguments, bool $failOnFailure = true) {
     if (!empty($requestArguments['url'])) {
       $requestUrl = '/' . ltrim($requestArguments['url'], '/');
     } else {

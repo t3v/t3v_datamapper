@@ -13,9 +13,9 @@ class VisibleViewHelper extends HiddenViewHelper {
    * Evaluates the condition.
    *
    * @param array|null $arguments The arguments
-   * @return boolean Whether the condition is fulfilled
+   * @return bool Whether the condition is fulfilled
    */
-  protected static function evaluateCondition($arguments = null) {
+  protected static function evaluateCondition($arguments = null): bool {
     $uid         = intval($arguments['uid']);
     $languageUid = isset($arguments['languageUid']) ? intval($arguments['languageUid']) : self::getLanguageService()->getLanguageUid();
     $page        = self::getPageService()->getPageByUid($uid, $languageUid);

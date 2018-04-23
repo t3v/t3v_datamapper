@@ -6,9 +6,11 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
-* Changed TypoScript setting `languageOverlay` to `page.hideNotTranslated` (breaking change)
-* Refactored view helpers
+* Changed TypoScript setting languageOverlay to page.hideNotTranslated (breaking change)
+* Refactoring and Type Hinting
 * Updated classes
+* Improved tests
+* Updated AppVeyor configuration
 * Cleaned up
 
 4.5.0
