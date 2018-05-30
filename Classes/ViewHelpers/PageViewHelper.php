@@ -24,7 +24,7 @@ class PageViewHelper extends AbstractViewHelper implements CompilableInterface {
    * @param int $languageUid The optional language UID, defaults to the UID of the current system language
    * @return string The rendered output
    */
-  public function render(int $uid, int $languageUid = null) {
+  public function render(int $uid, int $languageUid = null): string {
     return static::renderStatic(
       [
         'uid'         => $uid,
@@ -55,7 +55,7 @@ class PageViewHelper extends AbstractViewHelper implements CompilableInterface {
    *
    * @return \T3v\T3vCore\Service\LanguageService The language service
    */
-  protected static function getLanguageService() {
+  protected static function getLanguageService(): LanguageService {
     $objectManager   = GeneralUtility::makeInstance(ObjectManager::class);
     $languageService = $objectManager->get(LanguageService::class);
 
@@ -67,7 +67,7 @@ class PageViewHelper extends AbstractViewHelper implements CompilableInterface {
    *
    * @return \T3v\T3vDataMapper\Service\PageService The page service
    */
-  protected static function getPageService() {
+  protected static function getPageService(): PageService {
     $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
     $pageService   = $objectManager->get(PageService::class);
 

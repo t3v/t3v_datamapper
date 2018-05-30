@@ -7,8 +7,9 @@ Unreleased
 ----------
 
 * Changed TypoScript setting `languageOverlay` to `page.hideNotTranslated` (breaking change)
-* Refactored view helpers
+* Refactoring and Type Hinting
 * Updated classes
+* Improved tests
 * Updated AppVeyor configuration
 * Cleaned up
 

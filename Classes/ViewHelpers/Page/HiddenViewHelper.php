@@ -29,9 +29,9 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
    * Evaluates the condition.
    *
    * @param array|null $arguments The arguments
-   * @return boolean Whether the condition is fulfilled
+   * @return bool Whether the condition is fulfilled
    */
-  protected static function evaluateCondition($arguments = null) {
+  protected static function evaluateCondition($arguments = null): bool {
     $uid         = intval($arguments['uid']);
     $languageUid = isset($arguments['languageUid']) ? intval($arguments['languageUid']) : self::getLanguageService()->getLanguageUid();
     $page        = self::getPageService()->getPageByUid($uid, $languageUid);
@@ -45,7 +45,7 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
    *
    * @return \T3v\T3vCore\Service\LanguageService The language service
    */
-  protected static function getLanguageService() {
+  protected static function getLanguageService(): LanguageService {
     $objectManager   = GeneralUtility::makeInstance(ObjectManager::class);
     $languageService = $objectManager->get(LanguageService::class);
 
@@ -57,7 +57,7 @@ class HiddenViewHelper extends AbstractConditionViewHelper {
    *
    * @return \T3v\T3vDataMapper\Service\PageService The page service
    */
-  protected static function getPageService() {
+  protected static function getPageService(): PageService {
     $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
     $pageService   = $objectManager->get(PageService::class);
 

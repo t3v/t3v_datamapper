@@ -39,7 +39,7 @@ class DatabaseService extends AbstractService {
    * @link https://laravel.com/docs/master/database#configuration The Laravel Database Configuration
    * @link https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/GlobalValues/GlobalVariables The TYPO3 Global variables
    */
-  protected static function getConnection(string $connection = 'Default') {
+  protected static function getConnection(string $connection = 'Default'): array {
     $configuration = [];
 
     if (is_array($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections'][$connection])) {

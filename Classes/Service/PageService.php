@@ -47,7 +47,7 @@ class PageService extends AbstractService {
    *
    * @param int $uid The UID of the page
    * @param int $languageUid The optional language UID, defaults to the UID of the current system language
-   * @return array The row for the page or empty if no page was found
+   * @return array|null The row for the page or null if no page was found
    */
   public function getPage(int $uid, int $languageUid = null) {
     $languageUid = isset($languageUid) ? $languageUid : $this->$languageService->getLanguageUid();
@@ -80,7 +80,7 @@ class PageService extends AbstractService {
    *
    * @param int $uid The UID of the page
    * @param int $languageUid The optional language UID, defaults to the UID of the current system language
-   * @return array The row for the page or empty if no page was found
+   * @return array|null The row for the page or null if no page was found
    */
   public function getPageByUid(int $uid, int $languageUid = null) {
     $languageUid = isset($languageUid) ? $languageUid : $this->$languageService->getLanguageUid();
@@ -92,7 +92,7 @@ class PageService extends AbstractService {
    * Gets the current page.
    *
    * @param int $languageUid The optional language UID, defaults to the UID of the current system language
-   * @return array The row for the current page or empty if no page was found
+   * @return array|null The row for the current page or null if no page was found
    */
   public function getCurrentPage(int $languageUid = null) {
     $languageUid = isset($languageUid) ? $languageUid : $this->$languageService->getLanguageUid();
@@ -106,7 +106,7 @@ class PageService extends AbstractService {
    *
    * @return array The settings
    */
-  protected function getSettings() {
+  protected function getSettings(): array {
     $configurationManager = $this->objectManager->get(ConfigurationManagerInterface::class);
     $configuration        = $configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
 
