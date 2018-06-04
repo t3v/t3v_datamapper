@@ -3,10 +3,10 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+4.6.0
+-----
 
-* Changed TypoScript setting languageOverlay to page.hideNotTranslated (breaking change)
+* Changed TypoScript setting `languageOverlay` to `page.hideNotTranslated` (breaking change)
 * Refactoring and Type Hinting
 * Updated classes
 * Improved tests
