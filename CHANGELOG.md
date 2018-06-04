@@ -3,6 +3,11 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
+6.0.2
+-----
+
+* Bugfixing
+
 6.0.1
 -----
 

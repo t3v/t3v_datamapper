@@ -22,7 +22,7 @@ class PageViewHelper extends AbstractViewHelper implements CompilableInterface {
    *
    * @param int $uid The UID of the page
    * @param int $languageUid The optional language UID, defaults to the UID of the current system language
-   * @return string The rendered output
+   * @return object The page object
    */
   public function render(int $uid, int $languageUid = null) {
     return static::renderStatic(
