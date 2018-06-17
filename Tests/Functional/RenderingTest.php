@@ -29,7 +29,7 @@ class RenderingTest extends FunctionalTestCase {
   protected $testExtensionsToLoad = ['typo3conf/ext/t3v_datamapper'];
 
   /**
-   * Test if template is rendered.
+   * Tests if the template is rendered.
    *
    * @test
    */
