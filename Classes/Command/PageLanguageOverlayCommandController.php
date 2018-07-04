@@ -34,18 +34,19 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
   /**
    * The list command.
    *
-   * @param int $sysLanguageUid The system language UID to search for
+   * @param int $sysLanguageUid The system language UID to list
    * @param int $pid The optional PID of the page to search from, defaults to `1`
    * @param int $recursion The optional recursion, defaults to `99`
-   * @param string $exclude The optional UIDs of pages to exclude as string, seperated by `,`, empty by default
+   * @param string $exclude The optional UIDs of pages to exclude from as string, seperated by `,`, empty by default
    */
   public function listCommand(int $sysLanguageUid, int $pid = 1, int $recursion = 99, string $exclude = '') {
     $this->beforeCommand();
 
-    $exclude        = GeneralUtility::intExplode(',', $exclude, true);
-    $pagesTreeList  = $this->queryGenerator->getTreeList($pid, $recursion, 0, 1);
-    $pageUids       = GeneralUtility::intExplode(',', $pagesTreeList, true);
-    $pageUids       = array_diff($pageUids, $exclude);
+    $exclude       = $exclude === '-' ? '' : $exclude;
+    $exclude       = GeneralUtility::intExplode(',', $exclude, true);
+    $pagesTreeList = $this->queryGenerator->getTreeList($pid, $recursion, 0, 1);
+    $pageUids      = GeneralUtility::intExplode(',', $pagesTreeList, true);
+    $pageUids      = array_diff($pageUids, $exclude);
 
     foreach ($pageUids as $pageUid) {
       $languageOverlay = LanguageOverlay::where([['pid', '=', $pageUid], ['sys_language_uid', '=', $sysLanguageUid]])->first();
@@ -55,7 +56,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
         $title  = $languageOverlay->title;
         $status = $languageOverlay->hidden ? 'hidden' : 'visible';
 
-        $this->log("{$title} ({$uid}) [{$status}]", 'info', true);
+        $this->log("{$title} ({$uid}) is {$status}", 'white', true);
       }
     }
   }
@@ -66,33 +67,35 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
    * @param int $sysLanguageUid The system language UID to hide
    * @param int $pid The optional PID of the page to search from, defaults to `1`
    * @param int $recursion The optional recursion, defaults to `99`
-   * @param string $exclude The optional UIDs of pages to exclude as string, seperated by `,`, empty by default
+   * @param string $exclude The optional UIDs of pages to exclude from as string, seperated by `,`, empty by default
    * @param bool $verbose The optional verbosity, defaults to `false`
    */
   public function hideCommand(int $sysLanguageUid, int $pid = 1, int $recursion = 99, string $exclude = '', bool $verbose = false) {
     $this->beforeCommand();
 
-    $exclude        = GeneralUtility::intExplode(',', $exclude, true);
-    $pagesTreeList  = $this->queryGenerator->getTreeList($pid, $recursion, 0, 1);
-    $pageUids       = GeneralUtility::intExplode(',', $pagesTreeList, true);
-    $pageUids       = array_diff($pageUids, $exclude);
+    $exclude       = $exclude === '-' ? '' : $exclude;
+    $exclude       = GeneralUtility::intExplode(',', $exclude, true);
+    $pagesTreeList = $this->queryGenerator->getTreeList($pid, $recursion, 0, 1);
+    $pageUids      = GeneralUtility::intExplode(',', $pagesTreeList, true);
+    $pageUids      = array_diff($pageUids, $exclude);
 
     foreach ($pageUids as $pageUid) {
       $languageOverlay = LanguageOverlay::where([['pid', '=', $pageUid], ['sys_language_uid', '=', $sysLanguageUid]])->first();
 
       if ($languageOverlay) {
+        $uid    = $languageOverlay->uid;
+        $title  = $languageOverlay->title;
         $hidden = $languageOverlay->hidden;
 
         if (!$hidden) {
-          $uid    = $languageOverlay->uid;
-          $title  = $languageOverlay->title;
-
           $this->log("Hiding {$title} ({$uid})...", 'info', $verbose);
 
           $languageOverlay->hidden = true;
           $languageOverlay->save();
 
-          $this->log("{$title} ({$uid}) is hidden.", 'ok', $verbose);
+          $this->log("{$title} ({$uid}) is now hidden.", 'ok', $verbose);
+        } else {
+          $this->log("{$title} ({$uid}) is already hidden, skipping...", 'warning', $verbose);
         }
       }
     }
@@ -104,33 +107,35 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
    * @param int $sysLanguageUid The system language UID to unhide
    * @param int $pid The optional PID of the page to search from, defaults to `1`
    * @param int $recursion The optional recursion, defaults to `99`
-   * @param string $exclude The optional UIDs of pages to exclude as string, seperated by `,`, empty by default
+   * @param string $exclude The optional UIDs of pages to exclude from as string, seperated by `,`, empty by default
    * @param bool $verbose The optional verbosity, defaults to `false`
    */
   public function unhideCommand(int $sysLanguageUid, int $pid = 1, int $recursion = 99, string $exclude = '', bool $verbose = false) {
     $this->beforeCommand();
 
-    $exclude        = GeneralUtility::intExplode(',', $exclude, true);
-    $pagesTreeList  = $this->queryGenerator->getTreeList($pid, $recursion, 0, 1);
-    $pageUids       = GeneralUtility::intExplode(',', $pagesTreeList, true);
-    $pageUids       = array_diff($pageUids, $exclude);
+    $exclude       = $exclude === '-' ? '' : $exclude;
+    $exclude       = GeneralUtility::intExplode(',', $exclude, true);
+    $pagesTreeList = $this->queryGenerator->getTreeList($pid, $recursion, 0, 1);
+    $pageUids      = GeneralUtility::intExplode(',', $pagesTreeList, true);
+    $pageUids      = array_diff($pageUids, $exclude);
 
     foreach ($pageUids as $pageUid) {
       $languageOverlay = LanguageOverlay::where([['pid', '=', $pageUid], ['sys_language_uid', '=', $sysLanguageUid]])->first();
 
       if ($languageOverlay) {
+        $uid    = $languageOverlay->uid;
+        $title  = $languageOverlay->title;
         $hidden = $languageOverlay->hidden;
 
         if ($hidden) {
-          $uid    = $languageOverlay->uid;
-          $title  = $languageOverlay->title;
-
           $this->log("Unhiding {$title} ({$uid})...", 'info', $verbose);
 
           $languageOverlay->hidden = false;
           $languageOverlay->save();
 
-          $this->log("{$title} ({$uid}) is visible.", 'ok', $verbose);
+          $this->log("{$title} ({$uid}) is now visible.", 'ok', $verbose);
+        } else {
+          $this->log("{$title} ({$uid}) is already visible, skipping...", 'warning', $verbose);
         }
       }
     }
