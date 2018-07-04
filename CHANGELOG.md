@@ -3,10 +3,10 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+4.6.4
+-----
 
-* Updated `PageLanguageOverlayCommandController`
+* Improved `PageLanguageOverlayCommandController`
 
 4.6.3
 -----
