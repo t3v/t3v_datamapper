@@ -3,6 +3,11 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
+Unreleased
+----------
+
+* Updated `PageLanguageOverlayCommandController`
+
 6.0.3
 -----
 
@@ -161,6 +166,6 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 * Updated Composer configuration / dependencies
 * Updated naming and claim
 * Updated comments
-* Clone from T3v Illuminate
+* Cloned from T3v Illuminate
 
 [Semantic Versioning]: http://semver.org "Semantic Versioning"
