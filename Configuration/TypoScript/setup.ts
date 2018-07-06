@@ -19,9 +19,7 @@ plugin {
         controllerExtensionName = {$plugin.tx_t3vdatamapper.settings.extbase.controllerExtensionName}
       }
 
-      page {
-        hideNotTranslated = {$plugin.tx_t3vdatamapper.settings.page.hideNotTranslated}
-      }
+      mode = {$plugin.tx_t3vdatamapper.settings.mode}
     }
 
     view {
