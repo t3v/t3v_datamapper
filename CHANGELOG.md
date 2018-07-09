@@ -3,11 +3,11 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+4.7.0
+-----
 
-* Changed TypoScript setting `page.hideNotTranslated` to `mode` (breaking change)
 * Improved `PageService`
+* Changed TypoScript setting `page.hideNotTranslated` to `mode` (breaking change)
 
 4.6.4
 -----
