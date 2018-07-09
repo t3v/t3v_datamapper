@@ -132,9 +132,11 @@ class PageService extends AbstractService {
             $attributes                = $languageOverlay->getAttributes();
 
             foreach (self::PAGE_LANGUAGE_OVERLAY_ATTRIBUTES as $attribute) {
-              if (!empty($attributes[$attribute])) {
-                $languageOverlayAttributes[$attribute] = $attributes[$attribute];
+              if (is_string($attributes[$attribute]) && empty($attributes[$attribute])) {
+                continue;
               }
+
+              $languageOverlayAttributes[$attribute] = $attributes[$attribute];
             }
 
             $page = array_merge($page, $languageOverlayAttributes);
