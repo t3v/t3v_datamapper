@@ -23,10 +23,8 @@ plugin {
         controllerExtensionName = T3vDataMapper
       }
 
-      page {
-        # cat=plugin/tx_t3vdatamapper/settings/page; type=boolean; label=If set, not translated pages will be hidden
-        hideNotTranslated = 1
-      }
+      # cat=plugin/tx_t3vdatamapper/settings/mode; type=options[Default=default,Preview=preview]; label=The mode in which T3v DataMapper runs
+      mode = default
     }
 
     view {

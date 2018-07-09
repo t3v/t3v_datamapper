@@ -3,6 +3,12 @@ Changelog
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
+Unreleased
+----------
+
+* Changed TypoScript setting `page.hideNotTranslated` to `mode` (breaking change)
+* Improved `PageService`
+
 6.0.4
 -----
 
