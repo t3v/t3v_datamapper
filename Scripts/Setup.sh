@@ -3,6 +3,8 @@
 # === Constants ===
 
 TYPO3_VERSION="^7.6"
+TYPO3_VERSION_DIGITS=${TYPO3_VERSION//[^[:digit:]]/}
+TYPO3_MAJOR_VERSION="${TYPO3_VERSION_DIGITS::1}"
 
 # === Commands ===
 
@@ -18,4 +20,4 @@ composer require typo3/cms="$TYPO3_VERSION"
 git checkout composer.json
 
 # Try to keep environment pollution down, EPA loves us
-unset TYPO3_VERSION
+unset TYPO3_VERSION TYPO3_VERSION_DIGITS TYPO3_MAJOR_VERSION

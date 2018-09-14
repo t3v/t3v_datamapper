@@ -24,10 +24,13 @@ class RenderingTest extends FunctionalTestCase {
    *
    * @var array
    */
-  protected $testExtensionsToLoad = ['typo3conf/ext/t3v_datamapper'];
+  protected $testExtensionsToLoad = [
+    'typo3conf/ext/t3v_core',
+    'typo3conf/ext/t3v_datamapper'
+  ];
 
   /**
-   * Test if the template is rendered.
+   * Tests if the template is rendered.
    *
    * @test
    */
@@ -45,8 +48,6 @@ class RenderingTest extends FunctionalTestCase {
 
   /**
    * Setup before running tests.
-   *
-   * @return void
    */
   protected function setUp() {
     parent::setUp();
@@ -57,7 +58,7 @@ class RenderingTest extends FunctionalTestCase {
   }
 
   /**
-   * Helper function to fetch the Frontend response.
+   * Fetches the Frontend response.
    *
    * @param array $requestArguments The request arguments
    * @param bool $failOnFailure Fail on failure, defaults to `true`

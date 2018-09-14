@@ -8,6 +8,8 @@ before_install:
   - if php -i | grep -q xdebug; then phpenv config-rm xdebug.ini; fi
 
 before_script:
+  - TYPO3_VERSION_DIGITS=${TYPO3_VERSION//[^[:digit:]]/}
+  - TYPO3_MAJOR_VERSION="${TYPO3_VERSION_DIGITS::1}"
   - composer require typo3/cms="$TYPO3_VERSION"
   - export BUILD_PATH="$PWD/.build"
   - export BIN_PATH="$BUILD_PATH/bin"
