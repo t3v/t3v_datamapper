@@ -1,4 +1,4 @@
-Release
+RELEASE
 =======
 
 > Although not very tricky, it is quite easy to deploy something that doesn't quite work as expected. The following steps
