@@ -30,15 +30,15 @@
   ],
   "require": {
     "php": ">= 7.0 < 7.3",
-    "typo3/cms-core": "^8.7 || ^9.3",
-    "illuminate/database": "^5.5",
-    "illuminate/validation": "^5.5",
+    "typo3/cms-core": "^8.7 || ^9.4",
+    "illuminate/database": "^5.7",
+    "illuminate/validation": "^5.7",
     "t3v/t3v_core": "*"
   },
   "require-dev": {
     "mikey179/vfsStream": "^1.6",
     "namelesscoder/typo3-repository-client": "^2.0",
-    "nimut/testing-framework": "^3.0",
+    "nimut/testing-framework": "^4.0",
     "phpunit/phpunit": "^6.0"
   },
   "autoload": {
