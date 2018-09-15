@@ -12,7 +12,7 @@ use T3v\T3vDataMapper\Tests\Unit\Fixtures\LoadableClass;
  */
 class FirstClassTest extends UnitTestCase {
   /**
-   * Test if method returns true.
+   * Tests if the method returns true.
    *
    * @test
    */
