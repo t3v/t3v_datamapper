@@ -11,6 +11,7 @@ use T3v\T3vCore\Service\LanguageService;
 use T3v\T3vDataMapper\Domain\Model\Page;
 use T3v\T3vDataMapper\Domain\Model\Page\LanguageOverlay;
 use T3v\T3vDataMapper\Service\DatabaseService;
+use T3v\T3vDataMapper\Service\ExtensionService;
 
 /**
  * The page service class.
@@ -48,11 +49,6 @@ class PageService extends AbstractService {
   ];
 
   /**
-   * The preview mode.
-   */
-  const PREVIEW_MODE = 'preview';
-
-  /**
    * The query generator.
    *
    * @var \TYPO3\CMS\Core\Database\QueryGenerator
@@ -67,6 +63,13 @@ class PageService extends AbstractService {
   protected $languageService;
 
   /**
+   * The extension service.
+   *
+   * @var \T3v\T3vDataMapper\Service\ExtensionService
+   */
+  protected $extensionService;
+
+  /**
    * The database service.
    *
    * @var \T3v\T3vDataMapper\Service\DatabaseService
@@ -79,10 +82,10 @@ class PageService extends AbstractService {
   public function __construct() {
     parent::__construct();
 
-    $this->queryGenerator  = $this->objectManager->get(QueryGenerator::class);
-    $this->languageService = $this->objectManager->get(LanguageService::class);
-    $this->databaseService = $this->objectManager->get(DatabaseService::class);
-
+    $this->queryGenerator   = $this->objectManager->get(QueryGenerator::class);
+    $this->languageService  = $this->objectManager->get(LanguageService::class);
+    $this->extensionService = $this->objectManager->get(ExtensionService::class);
+    $this->databaseService  = $this->objectManager->get(DatabaseService::class);
     $this->databaseService->setup();
   }
 
@@ -141,7 +144,7 @@ class PageService extends AbstractService {
 
             $page = array_merge($page, $languageOverlayAttributes);
 
-            if ($this->previewMode() && !$hideIfDefaultLanguage && !$hideIfNotTranslated) {
+            if ($this->extensionService->runningInFallbackMode() && !$hideIfDefaultLanguage && !$hideIfNotTranslated) {
               $page['hidden'] = 0;
             }
           }
@@ -232,12 +235,12 @@ class PageService extends AbstractService {
   }
 
   /**
-   * Gets the UIDs of the subpages of a page.
+   * Gets the subpages UIDs of a page.
    *
    * @param int $pid The PID of the entry page to search from
    * @param int $recursion The recursion level, defaults to `1`
    * @param bool $exclude If set, the entry page should be excluded, defaults to `true`
-   * @return array The subpages UIDs or empty if no subpages UIDs were found
+   * @return array The subpages UIDs or empty if no subpages were found
    */
   public function getSubpagesUids(int $pid, int $recursion = 1, bool $exclude = true): array {
     $subpagesUids = [];
@@ -257,37 +260,5 @@ class PageService extends AbstractService {
     }
 
     return $subpagesUids;
-  }
-
-  /**
-   * Checks if T3v DataMapper is running in preview mode.
-   *
-   * @return bool If T3v DataMapper is running in preview mode
-   */
-  protected function previewMode(): bool {
-    $previewMode = false;
-    $settings    = $this->getSettings();
-
-    if (is_array($settings) && !empty($settings)) {
-      $mode = $settings['mode'];
-
-      if ($mode === self::PREVIEW_MODE) {
-        $previewMode = true;
-      }
-    }
-
-    return $previewMode;
-  }
-
-  /**
-   * Gets the settings from `plugin.tx_t3vdatamapper.settings`.
-   *
-   * @return array The settings
-   */
-  protected function getSettings(): array {
-    $configurationManager = $this->objectManager->get(ConfigurationManagerInterface::class);
-    $configuration        = $configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
-
-    return $configuration['plugin.']['tx_t3vdatamapper.']['settings.'];
   }
 }

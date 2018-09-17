@@ -9,6 +9,7 @@ Dependencies
 ------------
 
 * TYPO3 CMS 7.6
+* PHPLucidFrame ConsoleTable library
 * Illuminate Database component
 * Illuminate Validation component
 * T3v Core extension

@@ -20,4 +20,11 @@ abstract class AbstractModel extends Model {
    * @var string
    */
   protected $primaryKey = 'uid';
+
+  /**
+   * Overwrites the storage format of the model's date columns.
+   *
+   * @var string
+   */
+  protected $dateFormat = 'U';
 }
