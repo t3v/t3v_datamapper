@@ -3,11 +3,12 @@ CHANGELOG
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+7.1.0
+-----
 
 * Updated dependencies
-* Updated AppVeyor configuration
+* Updated Travis CI and AppVeyor configuration
+* Cleaned up
 
 7.0.1
 -----
