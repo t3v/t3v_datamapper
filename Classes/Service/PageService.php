@@ -19,6 +19,12 @@ use T3v\T3vDataMapper\Service\DatabaseService;
  */
 class PageService extends AbstractService {
   /**
+   * The modes which DataMapper supports.
+   */
+  const STRICT_MODE   = 'strict';
+  const FALLBACK_MODE = 'fallback';
+
+  /**
    * The page doktypes.
    */
   const PAGE_DOKTYPES = [1, 2];
@@ -46,11 +52,6 @@ class PageService extends AbstractService {
     'tx_t3vpage_outline',
     'tx_t3vpage_summary'
   ];
-
-  /**
-   * The preview mode.
-   */
-  const PREVIEW_MODE = 'preview';
 
   /**
    * The query generator.
@@ -82,7 +83,6 @@ class PageService extends AbstractService {
     $this->queryGenerator  = $this->objectManager->get(QueryGenerator::class);
     $this->languageService = $this->objectManager->get(LanguageService::class);
     $this->databaseService = $this->objectManager->get(DatabaseService::class);
-
     $this->databaseService->setup();
   }
 
@@ -141,7 +141,7 @@ class PageService extends AbstractService {
 
             $page = array_merge($page, $languageOverlayAttributes);
 
-            if ($this->previewMode() && !$hideIfDefaultLanguage && !$hideIfNotTranslated) {
+            if ($this->runningInFallbackMode() && !$hideIfDefaultLanguage && !$hideIfNotTranslated) {
               $page['hidden'] = 0;
             }
           }
@@ -232,12 +232,12 @@ class PageService extends AbstractService {
   }
 
   /**
-   * Gets the UIDs of the subpages of a page.
+   * Gets the subpages UIDs of a page.
    *
    * @param int $pid The PID of the entry page to search from
    * @param int $recursion The recursion level, defaults to `1`
    * @param bool $exclude If set, the entry page should be excluded, defaults to `true`
-   * @return array The subpages UIDs or empty if no subpages UIDs were found
+   * @return array The subpages UIDs or empty if no subpages were found
    */
   public function getSubpagesUids(int $pid, int $recursion = 1, bool $exclude = true): array {
     $subpagesUids = [];
@@ -260,23 +260,43 @@ class PageService extends AbstractService {
   }
 
   /**
-   * Checks if T3v DataMapper is running in preview mode.
+   * Checks if DataMapper is running in `strict` mode.
    *
-   * @return bool If T3v DataMapper is running in preview mode
+   * @return bool If DataMapper is running in `strict` mode
    */
-  protected function previewMode(): bool {
-    $previewMode = false;
+  protected function runningInStrictMode(): bool {
+    $strictMode = true;
+    $settings   = $this->getSettings();
+
+    if (is_array($settings) && !empty($settings)) {
+      $mode = $settings['mode'];
+
+      if ($mode != self::STRICT_MODE) {
+        $strictMode = false;
+      }
+    }
+
+    return $strictMode;
+  }
+
+  /**
+   * Checks if DataMapper is running in `fallback` mode.
+   *
+   * @return bool If DataMapper is running in `fallback` mode
+   */
+  protected function runningInFallbackMode(): bool {
+    $fallbackMode = false;
     $settings    = $this->getSettings();
 
     if (is_array($settings) && !empty($settings)) {
       $mode = $settings['mode'];
 
-      if ($mode === self::PREVIEW_MODE) {
-        $previewMode = true;
+      if ($mode === self::FALLBACK_MODE) {
+        $fallbackMode = true;
       }
     }
 
-    return $previewMode;
+    return $fallbackMode;
   }
 
   /**

@@ -23,8 +23,8 @@ plugin {
         controllerExtensionName = T3vDataMapper
       }
 
-      # cat=plugin/tx_t3vdatamapper/settings/mode; type=options[Default=default,Preview=preview]; label=The mode in which T3v DataMapper runs
-      mode = default
+      # cat=plugin/tx_t3vdatamapper/settings/mode; type=options[Strict=strict,Fallback=fallback]; label=The mode in which DataMapper runs
+      mode = strict
     }
 
     view {
