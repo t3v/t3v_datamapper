@@ -7,6 +7,7 @@ Unreleased
 ----------
 
 * Introduced `strict` and `fallback` mode (breaking change)
+* Moved functionality from `PageService` to `ExtensionService`
 
 7.1.0
 -----

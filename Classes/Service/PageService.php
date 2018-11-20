@@ -11,6 +11,7 @@ use T3v\T3vCore\Service\LanguageService;
 use T3v\T3vDataMapper\Domain\Model\Page;
 use T3v\T3vDataMapper\Domain\Model\Page\LanguageOverlay;
 use T3v\T3vDataMapper\Service\DatabaseService;
+use T3v\T3vDataMapper\Service\ExtensionService;
 
 /**
  * The page service class.
@@ -18,12 +19,6 @@ use T3v\T3vDataMapper\Service\DatabaseService;
  * @package T3v\T3vDataMapper\Service
  */
 class PageService extends AbstractService {
-  /**
-   * The modes which DataMapper supports.
-   */
-  const STRICT_MODE   = 'strict';
-  const FALLBACK_MODE = 'fallback';
-
   /**
    * The page doktypes.
    */
@@ -68,6 +63,13 @@ class PageService extends AbstractService {
   protected $languageService;
 
   /**
+   * The extension service.
+   *
+   * @var \T3v\T3vDataMapper\Service\ExtensionService
+   */
+  protected $extensionService;
+
+  /**
    * The database service.
    *
    * @var \T3v\T3vDataMapper\Service\DatabaseService
@@ -80,9 +82,10 @@ class PageService extends AbstractService {
   public function __construct() {
     parent::__construct();
 
-    $this->queryGenerator  = $this->objectManager->get(QueryGenerator::class);
-    $this->languageService = $this->objectManager->get(LanguageService::class);
-    $this->databaseService = $this->objectManager->get(DatabaseService::class);
+    $this->queryGenerator   = $this->objectManager->get(QueryGenerator::class);
+    $this->languageService  = $this->objectManager->get(LanguageService::class);
+    $this->extensionService = $this->objectManager->get(ExtensionService::class);
+    $this->databaseService  = $this->objectManager->get(DatabaseService::class);
     $this->databaseService->setup();
   }
 
@@ -141,7 +144,7 @@ class PageService extends AbstractService {
 
             $page = array_merge($page, $languageOverlayAttributes);
 
-            if ($this->runningInFallbackMode() && !$hideIfDefaultLanguage && !$hideIfNotTranslated) {
+            if ($this->extensionService->runningInFallbackMode() && !$hideIfDefaultLanguage && !$hideIfNotTranslated) {
               $page['hidden'] = 0;
             }
           }
@@ -257,57 +260,5 @@ class PageService extends AbstractService {
     }
 
     return $subpagesUids;
-  }
-
-  /**
-   * Checks if DataMapper is running in `strict` mode.
-   *
-   * @return bool If DataMapper is running in `strict` mode
-   */
-  protected function runningInStrictMode(): bool {
-    $strictMode = true;
-    $settings   = $this->getSettings();
-
-    if (is_array($settings) && !empty($settings)) {
-      $mode = $settings['mode'];
-
-      if ($mode != self::STRICT_MODE) {
-        $strictMode = false;
-      }
-    }
-
-    return $strictMode;
-  }
-
-  /**
-   * Checks if DataMapper is running in `fallback` mode.
-   *
-   * @return bool If DataMapper is running in `fallback` mode
-   */
-  protected function runningInFallbackMode(): bool {
-    $fallbackMode = false;
-    $settings    = $this->getSettings();
-
-    if (is_array($settings) && !empty($settings)) {
-      $mode = $settings['mode'];
-
-      if ($mode === self::FALLBACK_MODE) {
-        $fallbackMode = true;
-      }
-    }
-
-    return $fallbackMode;
-  }
-
-  /**
-   * Gets the settings from `plugin.tx_t3vdatamapper.settings`.
-   *
-   * @return array The settings
-   */
-  protected function getSettings(): array {
-    $configurationManager = $this->objectManager->get(ConfigurationManagerInterface::class);
-    $configuration        = $configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
-
-    return $configuration['plugin.']['tx_t3vdatamapper.']['settings.'];
   }
 }
