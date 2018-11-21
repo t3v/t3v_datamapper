@@ -6,6 +6,7 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Improved `AbstractModel` and `PageLanguageOverlayCommandController`
 * Introduced `strict` and `fallback` mode (breaking change)
 * Moved functionality from `PageService` to `ExtensionService`
 

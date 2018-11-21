@@ -9,6 +9,7 @@ Dependencies
 ------------
 
 * TYPO3 CMS 8.7 or greater
+* ConsoleTable library
 * Illuminate Database component
 * Illuminate Validation component
 * T3v Core extension
