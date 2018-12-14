@@ -32,8 +32,8 @@
     "php": ">= 7.0 < 7.4",
     "typo3/cms-core": "^8.7 || ^9.5",
     "phplucidframe/console-table": "^1.2",
-    "illuminate/database": "^5.7",
-    "illuminate/validation": "^5.7",
+    "illuminate/database": "^5.5",
+    "illuminate/validation": "^5.5",
     "t3v/t3v_core": "*"
   },
   "require-dev": {
