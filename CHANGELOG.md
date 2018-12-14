@@ -9,6 +9,9 @@ Unreleased
 * Improved `AbstractModel` and `PageLanguageOverlayCommandController`
 * Introduced `strict` and `fallback` mode (breaking change)
 * Moved functionality from `PageService` to `ExtensionService`
+* Updated dependencies
+* Updated Travis CI and AppVeyor configuration
+* Cleaned up
 
 7.1.0
 -----
