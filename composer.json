@@ -22,14 +22,13 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "replace": {
-    "t3v_datamapper": "self.version",
     "typo3-ter/t3v_datamapper": "self.version"
   },
   "repositories": [
     { "type": "composer", "url": "https://composer.typo3.org" }
   ],
   "require": {
-    "php": ">= 7.0 < 7.4",
+    "php": ">= 7.0 < 7.5",
     "typo3/cms-core": "^7.6",
     "phplucidframe/console-table": "^1.2",
     "illuminate/database": "^5.4",
@@ -37,7 +36,7 @@
     "t3v/t3v_core": "dev-7-0"
   },
   "require-dev": {
-    "mikey179/vfsStream": "^1.6",
+    "mikey179/vfsstream": "^1.6",
     "namelesscoder/typo3-repository-client": "^2.0",
     "nimut/testing-framework": "^2.0",
     "phpunit/phpunit": "^5.7"

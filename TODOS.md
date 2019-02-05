@@ -1,4 +1,2 @@
 TODOS
 =====
-
-- [ ] Write integration tests
