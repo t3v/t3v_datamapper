@@ -40,16 +40,8 @@ matrix:
       env: TYPO3_VERSION="^7.6"
     - php: 7.2
       env: TYPO3_VERSION="^7.6"
-    - php: 7.3
-      env: TYPO3_VERSION="^7.6"
-    - php: 7.4
-      env: TYPO3_VERSION="^7.6"
   allow_failures:
     - php: 7.2
-      env: TYPO3_VERSION="^7.6"
-    - php: 7.3
-      env: TYPO3_VERSION="^7.6"
-    - php: 7.4
       env: TYPO3_VERSION="^7.6"
 
 notifications:
@@ -60,7 +52,6 @@ notifications:
 #   - 7.0
 #   - 7.1
 #   - 7.2
-#   - 7.3
 
 script:
   # - >
