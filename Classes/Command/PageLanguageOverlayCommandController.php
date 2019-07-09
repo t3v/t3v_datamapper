@@ -65,7 +65,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
   }
 
   /**
-   * Initializes page language overlays.
+   * Initializes a page language overlay.
    *
    * @param int $sysLanguageUid The system language UID of the page language overlays to initialize
    * @param int $pid The optional PID of the page to search from, defaults to `1`
@@ -110,7 +110,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
   }
 
   /**
-   * Hides page language overlays.
+   * Hides a page language overlay.
    *
    * @param int $sysLanguageUid The system language UID of the page language overlays to hide
    * @param int $pid The optional PID of the page to search from, defaults to `1`
@@ -142,7 +142,7 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
   }
 
   /**
-   * Unhides page language overlays.
+   * Unhides a page language overlay.
    *
    * @param int $sysLanguageUid The system language UID of the page language overlays to unhide
    * @param int $pid The optional PID of the page to search from, defaults to `1`
