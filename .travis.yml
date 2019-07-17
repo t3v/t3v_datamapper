@@ -34,33 +34,29 @@ language: php
 matrix:
   fast_finish: true
   include:
-    - php: 7.0
-      env: TYPO3_VERSION="^8.7"
-    - php: 7.1
-      env: TYPO3_VERSION="^8.7"
-    - php: 7.2
-      env: TYPO3_VERSION="^8.7"
     - php: 7.2
       env: TYPO3_VERSION="^9.5"
-    - php: 7.3
-      env: TYPO3_VERSION="^8.7"
+    - php: 7.2
+      env: TYPO3_VERSION="dev-master as 10.0"
     - php: 7.3
       env: TYPO3_VERSION="^9.5"
+    - php: 7.3
+      env: TYPO3_VERSION="dev-master as 10.0"
   allow_failures:
     - php: 7.2
       env: TYPO3_VERSION="^9.5"
-    - php: 7.3
-      env: TYPO3_VERSION="^8.7"
+    - php: 7.2
+      env: TYPO3_VERSION="dev-master as 10.0"
     - php: 7.3
       env: TYPO3_VERSION="^9.5"
+    - php: 7.3
+      env: TYPO3_VERSION="dev-master as 10.0"
 
 notifications:
   email:
     - dev@bitaculous.com
 
 # php:
-#   - 7.0
-#   - 7.1
 #   - 7.2
 #   - 7.3
 

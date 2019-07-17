@@ -28,8 +28,8 @@
     { "type": "composer", "url": "https://composer.typo3.org" }
   ],
   "require": {
-    "php": ">= 7.0 < 7.4",
-    "typo3/cms-core": "^8.7 || ^9.5",
+    "php": ">= 7.2 < 7.4",
+    "typo3/cms-core": "^9.5 || dev-master",
     "phplucidframe/console-table": "^1.2",
     "illuminate/database": "^5.5",
     "illuminate/validation": "^5.5",
