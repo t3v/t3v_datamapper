@@ -7,8 +7,8 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 -----
 
 * Support only TYPO3 8.x
-* Updated dependencies
 * Updated Travis CI configuration
+* Updated dependencies
 * Cleaned up
 
 7.3.2
