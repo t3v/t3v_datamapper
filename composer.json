@@ -33,7 +33,7 @@
     "phplucidframe/console-table": "^1.2",
     "illuminate/database": "^5.4",
     "illuminate/validation": "^5.4",
-    "t3v/t3v_core": "dev-7-0"
+    "t3v/t3v_core": "dev-7-x"
   },
   "require-dev": {
     "mikey179/vfsstream": "^1.6",
