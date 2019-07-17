@@ -3,8 +3,8 @@ CHANGELOG
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+8.0.0
+-----
 
 * Dropped support for TYPO3 8.x
 * Updated dependencies
