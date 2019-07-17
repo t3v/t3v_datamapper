@@ -5,7 +5,8 @@
       "path": "./",
       "folder_exclude_patterns": [
         ".build",
-        ".idea"
+        ".idea",
+        "var"
       ],
       "file_exclude_patterns": [
         "*.afdesign",
