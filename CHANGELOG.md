@@ -6,6 +6,8 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
+* Support only TYPO3 8.x
+* Updated dependencies
 * Updated Travis CI configuration
 * Cleaned up
 

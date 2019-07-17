@@ -29,11 +29,11 @@
   ],
   "require": {
     "php": ">= 7.0 < 7.4",
-    "typo3/cms-core": "^8.7 || ^9.5",
+    "typo3/cms-core": "^8.7",
     "phplucidframe/console-table": "^1.2",
     "illuminate/database": "^5.5",
     "illuminate/validation": "^5.5",
-    "t3v/t3v_core": "*"
+    "t3v/t3v_core": "dev-8-x"
   },
   "require-dev": {
     "mikey179/vfsstream": "^1.6",

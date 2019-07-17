@@ -13,7 +13,7 @@ $EM_CONF[$_EXTKEY] = [
   'clearCacheOnLoad' => false,
   'constraints' => [
     'depends' => [
-      'typo3' => '8.7.0-9.5.99',
+      'typo3' => '8.7.0-8.7.99',
       't3v_core' => ''
     ],
     'conflicts' => [
