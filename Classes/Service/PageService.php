@@ -9,7 +9,6 @@ use T3v\T3vCore\Service\AbstractService;
 use T3v\T3vCore\Service\LanguageService;
 
 use T3v\T3vDataMapper\Domain\Model\Page;
-use T3v\T3vDataMapper\Domain\Model\Page\LanguageOverlay;
 use T3v\T3vDataMapper\Service\DatabaseService;
 use T3v\T3vDataMapper\Service\ExtensionService;
 
@@ -124,30 +123,6 @@ class PageService extends AbstractService {
 
         if ($hideIfDefaultLanguage) {
           $page['hidden'] = 1;
-        }
-
-        if ($languageUid > 0) {
-          $constraints     = [['pid', '=', $uid], ['sys_language_uid', '=', $languageUid], ['deleted', '=', 0]];
-          $languageOverlay = LanguageOverlay::where($constraints)->first();
-
-          if ($languageOverlay) {
-            $languageOverlayAttributes = [];
-            $attributes                = $languageOverlay->getAttributes();
-
-            foreach (self::PAGE_LANGUAGE_OVERLAY_ATTRIBUTES as $attribute) {
-              if (is_string($attributes[$attribute]) && empty($attributes[$attribute])) {
-                continue;
-              }
-
-              $languageOverlayAttributes[$attribute] = $attributes[$attribute];
-            }
-
-            $page = array_merge($page, $languageOverlayAttributes);
-
-            if ($this->extensionService->runningInFallbackMode() && !$hideIfDefaultLanguage && !$hideIfNotTranslated) {
-              $page['hidden'] = 0;
-            }
-          }
         }
       }
     }

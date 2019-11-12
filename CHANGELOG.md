@@ -3,10 +3,11 @@ CHANGELOG
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-8.0.0
------
+Unreleased
+----------
 
-* Dropped support for TYPO3 8.x
+* `LanguageOverlay` including Command Controller is gone (breaking change)
+* Dropped support for TYPO3 8.x (breaking change)
 * Updated Travis CI and AppVeyor configuration
 * Updated dependencies
 * Cleaned up
