@@ -2,12 +2,12 @@
 namespace T3v\T3vDataMapper\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
-use TYPO3\CMS\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 use T3v\T3vCore\Service\LanguageService;
+use T3v\T3vCore\ViewHelpers\AbstractViewHelper;
 
 use T3v\T3vDataMapper\Service\PageService;
 
@@ -18,21 +18,18 @@ use T3v\T3vDataMapper\Service\PageService;
  */
 class PageViewHelper extends AbstractViewHelper implements CompilableInterface {
   /**
-   * The view helper render function.
-   *
-   * @param int $uid The UID of the page
-   * @param int $languageUid The optional language UID, defaults to the UID of the current system language
-   * @return object The page object
+   * Use the compile with render static trait.
    */
-  public function render(int $uid, int $languageUid = null) {
-    return static::renderStatic(
-      [
-        'uid'         => $uid,
-        'languageUid' => $languageUid
-      ],
-      $this->buildRenderChildrenClosure(),
-      $this->renderingContext
-    );
+  use CompileWithRenderStatic;
+
+  /**
+   * Initializes the arguments.
+   */
+  public function initializeArguments(): void {
+    parent::initializeArguments();
+
+    $this->registerArgument('uid', 'int', 'The UID of the page', true, null);
+    $this->registerArgument('languageUid', 'int', 'The optional language UID', false, null);
   }
 
   /**
@@ -56,8 +53,7 @@ class PageViewHelper extends AbstractViewHelper implements CompilableInterface {
    * @return \T3v\T3vCore\Service\LanguageService The language service
    */
   protected static function getLanguageService(): LanguageService {
-    $objectManager   = GeneralUtility::makeInstance(ObjectManager::class);
-    $languageService = $objectManager->get(LanguageService::class);
+    $languageService = GeneralUtility::makeInstance(LanguageService::class);
 
     return $languageService;
   }
@@ -68,8 +64,7 @@ class PageViewHelper extends AbstractViewHelper implements CompilableInterface {
    * @return \T3v\T3vDataMapper\Service\PageService The page service
    */
   protected static function getPageService(): PageService {
-    $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-    $pageService   = $objectManager->get(PageService::class);
+    $pageService = GeneralUtility::makeInstance(PageService::class);
 
     return $pageService;
   }

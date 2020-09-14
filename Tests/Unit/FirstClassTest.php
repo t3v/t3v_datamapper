@@ -10,15 +10,17 @@ use T3v\T3vDataMapper\Tests\Unit\Fixtures\LoadableClass;
  *
  * @package T3v\T3vDataMapper\Tests\Unit
  */
-class FirstClassTest extends UnitTestCase {
-  /**
-   * Tests if the method returns true.
-   *
-   * @test
-   */
-  public function methodReturnsTrue() {
-    $firstClassObject = new LoadableClass();
+class FirstClassTest extends UnitTestCase
+{
+    /**
+     * Tests if the method returns true.
+     *
+     * @test
+     */
+    public function methodReturnsTrue(): void
+    {
+        $firstClassObject = new LoadableClass();
 
-    $this->assertTrue($firstClassObject->returnsTrue());
-  }
+        self::assertTrue($firstClassObject->returnsTrue());
+    }
 }

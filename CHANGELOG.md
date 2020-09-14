@@ -6,8 +6,10 @@ Notable changes will be documented in this file. The project adheres to [Semanti
 Unreleased
 ----------
 
-* `LanguageOverlay` including Command Controller is gone (breaking change)
+* Moved `ExtensionService` to T3v Core (breaking change)
+* Removed `LanguageOverlay` including command, controller, model and repository (breaking change)
 * Dropped support for TYPO3 8.x (breaking change)
+* PSR-12 formatting
 * Updated Travis CI and AppVeyor configuration
 * Updated dependencies
 * Cleaned up

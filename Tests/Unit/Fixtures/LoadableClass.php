@@ -6,8 +6,10 @@ namespace T3v\T3vDataMapper\Tests\Unit\Fixtures;
  *
  * @package T3v\T3vDataMapper\Tests\Unit\Fixtures
  */
-class LoadableClass {
-  public function returnsTrue() {
-    return true;
-  }
+class LoadableClass
+{
+    public function returnsTrue(): bool
+    {
+        return true;
+    }
 }

@@ -3,7 +3,7 @@ defined('TYPO3_MODE') or die();
 
 // === Variables ===
 
-$extensionKey   = 't3v_datamapper';
+$extensionKey = 't3v_datamapper';
 $extensionTitle = 'T3v DataMapper';
 
 // === TypoScript ===

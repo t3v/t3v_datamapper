@@ -22,9 +22,6 @@ plugin {
         # cat=plugin/tx_t3vdatamapper/settings/extbase; type=string; label=The controller extension name.
         controllerExtensionName = T3vDataMapper
       }
-
-      # cat=plugin/tx_t3vdatamapper/settings; type=options[Strict=strict,Fallback=fallback]; label=The mode in which T3v DataMapper runs.
-      mode = strict
     }
 
     view {
