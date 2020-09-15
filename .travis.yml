@@ -63,6 +63,9 @@ notifications:
 #   - 7.3
 #   - 7.4
 
+services:
+  - mysql
+
 script:
   # - >
   #   echo "Running PHP linter...";
