@@ -40,8 +40,8 @@ config {
   # --- Misc ---
 
   # Settings for the spam protection of email addresses:
-  spamProtectEmailAddresses              = 1
-  spamProtectEmailAddresses_atSubst      = &#64;
+  spamProtectEmailAddresses = 1
+  spamProtectEmailAddresses_atSubst = &#64;
   spamProtectEmailAddresses_lastDotSubst = .
 
   # En-/disables the Admin-Panel.
@@ -67,7 +67,7 @@ page {
 # === Locales ===
 
 [globalVar = GP:L = 1]
-config {
-  sys_language_uid = 1
-}
+  config {
+    sys_language_uid = 1
+  }
 [end]

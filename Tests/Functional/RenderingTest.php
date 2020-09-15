@@ -1,12 +1,10 @@
 <?php
 namespace T3v\T3vDataMapper\Tests\Functional;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-
 use Nimut\TestingFramework\Http\Response;
 use Nimut\TestingFramework\TestCase\FunctionalTestCase;
-
 use PHPUnit\Util\PHP\DefaultPhpProcess;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * The rendering test class.
