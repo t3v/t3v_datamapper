@@ -15,6 +15,6 @@ export typo3DatabaseName="t3v_datamapper";
 
 # === Functional Tests ===
 
-$BIN_PATH/phpunit --colors --configuration $TESTING_FRAMEWORK_PATH/FunctionalTests.xml Tests/Functional
+"$BIN_PATH/phpunit" --colors --configuration "$TESTING_FRAMEWORK_PATH/FunctionalTests.xml" Tests/Functional
 
 # find "Tests/Functional" -wholename "*Test.php" | parallel --gnu "$BIN_PATH/phpunit --colors --configuration $TESTING_FRAMEWORK_PATH/FunctionalTests.xml {}"
