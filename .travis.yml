@@ -37,20 +37,28 @@ matrix:
     - php: 7.2
       env: TYPO3_VERSION="^9.5"
     - php: 7.2
-      env: TYPO3_VERSION="dev-master as 10.0"
+      env: TYPO3_VERSION="^10.0"
     - php: 7.3
       env: TYPO3_VERSION="^9.5"
     - php: 7.3
-      env: TYPO3_VERSION="dev-master as 10.0"
+      env: TYPO3_VERSION="^10.0"
+    - php: 7.4
+      env: TYPO3_VERSION="^9.5"
+    - php: 7.4
+      env: TYPO3_VERSION="^10.0"
   allow_failures:
     - php: 7.2
       env: TYPO3_VERSION="^9.5"
     - php: 7.2
-      env: TYPO3_VERSION="dev-master as 10.0"
+      env: TYPO3_VERSION="^10.0"
     - php: 7.3
       env: TYPO3_VERSION="^9.5"
     - php: 7.3
-      env: TYPO3_VERSION="dev-master as 10.0"
+      env: TYPO3_VERSION="^10.0"
+    - php: 7.4
+      env: TYPO3_VERSION="^9.5"
+    - php: 7.4
+      env: TYPO3_VERSION="^10.0"
 
 notifications:
   email:
@@ -59,6 +67,7 @@ notifications:
 # php:
 #   - 7.2
 #   - 7.3
+#   - 7.4
 
 script:
   # - >
