@@ -21,25 +21,12 @@ Installation
 2. Run `composer install` or `composer update` to install all dependencies with Composer
 3. Include the TypoScript for T3v DataMapper
 
-Commands
---------
-
-* Page Language Overlay Command
-
-    * List Action
-    * Hide Action
-    * Unhide Action
-
 Domain
 ------
 
 ### Model
 
 * Page
-
-#### Page
-
-* Language Overlay
 
 Service
 -------
