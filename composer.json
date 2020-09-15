@@ -48,8 +48,8 @@
     "php": ">= 7.2 < 8.0",
     "typo3/cms-core": "^9.5.21 || ^10.4.8",
     "phplucidframe/console-table": "^1.2",
-    "illuminate/database": "^7.28",
-    "illuminate/validation": "^7.28",
+    "illuminate/database": "^6.18",
+    "illuminate/validation": "^6.18",
     "t3v/t3v_core": "dev-develop"
   },
   "require-dev": {
