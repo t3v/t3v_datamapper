@@ -1,44 +1,44 @@
 {
-  // Configuration file for PHPStorm Dynamic Return Type Plugin
   "methodCalls": [
     {
       "class": "\\TYPO3\\CMS\\Core\\Utility\\GeneralUtility",
       "method": "makeInstance",
       "position": 0
     },
-
     {
       "class": "\\TYPO3\\CMS\\Extbase\\Object\\ObjectManagerInterface",
       "method": "get",
       "position": 0
     },
-
     {
-      "class": "\\PHPUnit\\Framework\\TestCase",
+      "class": "\\TYPO3\\CMS\\Components\\TestingFramework\\Core\\BaseTestCase",
+      "method": "getAccessibleMock",
+      "position": 0,
+      "mask": "%s|\\PHPUnit_Framework_MockObject_MockObject|\\TYPO3\\CMS\\Components\\TestingFramework\\Core\\AccessibleObjectInterface"
+    },
+    {
+      "class": "\\TYPO3\\CMS\\Components\\TestingFramework\\Core\\BaseTestCase",
+      "method": "getAccessibleMockForAbstractClass",
+      "position": 0,
+      "mask": "%s|\\PHPUnit_Framework_MockObject_MockObject|\\TYPO3\\CMS\\Components\\TestingFramework\\Core\\AccessibleObjectInterface"
+    },
+    {
+      "class": "\\PHPUnit_Framework_TestCase",
       "method": "prophesize",
       "position": 0,
       "mask": "%s|\\Prophecy\\Prophecy\\ObjectProphecy"
     },
-
     {
-      "class": "\\PHPUnit\\Framework\\TestCase",
+      "class": "\\PHPUnit_Framework_TestCase",
       "method": "createMock",
       "position": 0,
       "mask": "%s|\\PHPUnit_Framework_MockObject_MockObject"
     },
-
     {
-      "class": "\\TYPO3\\TestingFramework\\Core\\BaseTestCase",
-      "method": "getAccessibleMock",
+      "class": "\\PHPUnit_Framework_TestCase",
+      "method": "getMock",
       "position": 0,
-      "mask": "%s|\\PHPUnit_Framework_MockObject_MockObject|\\TYPO3\\TestingFramework\\Core\\AccessibleObjectInterface"
-    },
-
-    {
-      "class": "\\TYPO3\\TestingFramework\\Core\\BaseTestCase",
-      "method": "getAccessibleMockForAbstractClass",
-      "position": 0,
-      "mask": "%s|\\PHPUnit_Framework_MockObject_MockObject|\\TYPO3\\TestingFramework\\Core\\AccessibleObjectInterface"
+      "mask": "%s|\\PHPUnit_Framework_MockObject_MockObject"
     }
   ],
   "functionCalls": [
