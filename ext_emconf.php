@@ -1,5 +1,5 @@
 <?php
-/* @var string $_EXTKEY */
+/** @var string $_EXTKEY */
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'T3v DataMapper',
