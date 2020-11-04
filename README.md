@@ -73,9 +73,9 @@ problems [here].
 Versioning
 ----------
 
-This library aims to adhere to [Semantic Versioning 2.0.0]. Violations of this scheme should be reported as bugs. Specifically, if a minor
-or patch version is released that breaks backward compatibility, that version should be immediately yanked and / or a new version should be
-immediately released that restores compatibility.
+This project aims to adhere to [Semantic Versioning 2.0.0]. Violations of this scheme should be reported as bugs. Specifically, if a minor
+or patch version is being released that breaks backward compatibility, that version should be immediately yanked and / or a new version
+should be immediately released that restores compatibility.
 
 Credits
 -------
