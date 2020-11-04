@@ -7,4 +7,4 @@
 
 defined('TYPO3_MODE') or die();
 
-/** _XXX_T3V_CREATOR_XXX_ */
+/** _XXX_T3V_GENERATOR_XXX_ */
