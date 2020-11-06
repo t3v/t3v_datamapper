@@ -2,65 +2,8 @@
 # | T3v DataMapper Setup |
 # ------------------------
 
-# === Plugin Configuration ===
+# === Imports ===
 
-plugin {
-  tx_t3vdatamapper {
-    persistence {
-      enableAutomaticCacheClearing = {$plugin.tx_t3vdatamapper.persistence.enableAutomaticCacheClearing}
-
-      storagePid = {$plugin.tx_t3vdatamapper.persistence.storagePid}
-
-      updateReferenceIndex = {$plugin.tx_t3vdatamapper.persistence.updateReferenceIndex}
-    }
-
-    resources {
-      rootPath = {$plugin.tx_t3vdatamapper.resources.rootPath}
-
-      private {
-        rootPath = {$plugin.tx_t3vdatamapper.resources.private.rootPath}
-      }
-
-      public {
-        rootPath = {$plugin.tx_t3vdatamapper.resources.public.rootPath}
-      }
-    }
-
-    settings {
-      extbase {
-        controllerExtensionName = {$plugin.tx_t3vdatamapper.settings.extbase.controllerExtensionName}
-      }
-    }
-
-    view {
-      layoutRootPath = {$plugin.tx_t3vdatamapper.view.layoutRootPath}
-
-      # Defines several paths for layouts, which will be tried in reversed order (the paths are searched from bottom to top).
-      # The first folder where the desired layout is found, is used. If the array keys are numeric, they are first sorted and then tried in
-      # reversed order.
-      layoutRootPaths {
-        0 = {$plugin.tx_t3vdatamapper.view.layoutRootPath}
-      }
-
-      templateRootPath = {$plugin.tx_t3vdatamapper.view.templateRootPath}
-
-      # Defines several paths for templates, which will be tried in reversed order (the paths are searched from bottom to top).
-      # The first folder where the desired template is found, is used. If the array keys are numeric, they are first sorted and then tried
-      # in reversed order.
-      templateRootPaths {
-        0 = {$plugin.tx_t3vdatamapper.view.templateRootPath}
-      }
-
-      partialRootPath = {$plugin.tx_t3vdatamapper.view.partialRootPath}
-
-      # Defines several paths for partials, which will be tried in reversed order (the paths are searched from bottom to top).
-      # The first folder where the desired partial is found, is used. If the array keys are numeric, they are first sorted and then tried in
-      # reversed order.
-      partialRootPaths {
-        0 = {$plugin.tx_t3vdatamapper.view.partialRootPath}
-      }
-    }
-  }
-}
+@import './Base/setup.typoscript'
 
 # _XXX_T3V_GENERATOR_XXX_
