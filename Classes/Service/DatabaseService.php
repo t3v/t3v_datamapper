@@ -7,6 +7,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 use T3v\T3vCore\Service\AbstractService;
 
+
 /**
  * The database service class.
  *
@@ -49,6 +50,12 @@ class DatabaseService extends AbstractService
 
         if (is_array($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections'][$connection])) {
             $extensionConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3v_datamapper'];
+            /* typo3 10
+            $backendConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+                \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+            )->get('t3v_datamapper');
+            */
+
 
             if (is_string($extensionConfiguration)) {
                 $extensionConfiguration = @unserialize($extensionConfiguration, false);
