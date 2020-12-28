@@ -4,9 +4,7 @@ declare(strict_types=1);
 namespace T3v\T3vDataMapper\Service;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
-
 use T3v\T3vCore\Service\AbstractService;
-
 
 /**
  * The database service class.
@@ -22,8 +20,8 @@ class DatabaseService extends AbstractService
      */
     public static function setup(string $connection = 'Default'): void
     {
-        // First, create a new `Capsule` manager instance. Capsule aims to make configuring the library for usage outside of
-        // the Laravel framework as easy as possible.
+        // First, create a new `Capsule` manager instance. Capsule aims to make configuring the library for usage outside of the Laravel
+        // framework as easy as possible.
         $capsule = new Capsule();
 
         // Add connection to Capsule.
@@ -50,12 +48,11 @@ class DatabaseService extends AbstractService
 
         if (is_array($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections'][$connection])) {
             $extensionConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3v_datamapper'];
-            /* typo3 10
-            $backendConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-                \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
-            )->get('t3v_datamapper');
-            */
 
+            // TODO TYPO3 10 compatibility
+            // $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+            //     \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+            // )->get('t3v_datamapper');
 
             if (is_string($extensionConfiguration)) {
                 $extensionConfiguration = @unserialize($extensionConfiguration, false);

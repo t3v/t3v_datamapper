@@ -3,7 +3,9 @@
 
 [![Travis CI Status][Travis CI Status]][Travis CI]
 
-**Brings the [Database] and [Validation] magic from [Laravel] to [TYPO3].**
+**The Data Mapper extension of TYPO3voilà.**
+
+Brings the [Database] and [Validation] magic from [Laravel] to [TYPO3].
 
 Dependencies
 ------------
@@ -101,7 +103,7 @@ T3v DataMapper is released under the [MIT License (MIT)], see [LICENSE].
 [MIT License (MIT)]: http://opensource.org/licenses/MIT "The MIT License (MIT)"
 [Semantic Versioning 2.0.0]: http://semver.org "Semantic Versioning 2.0.0"
 [Sven Lahann]: https://github.com/svenlahann "Sven Lahann at GitHub"
-[T3v DataMapper]: https://t3v.github.io/t3v_datamapper/ "Brings the Database and Validation magic from Laravel to TYPO3."
+[T3v DataMapper]: https://t3v.github.io/t3v_datamapper/ "The Data Mapper extension of TYPO3voilà."
 [Travis CI]: https://travis-ci.org/t3v/t3v_datamapper "T3v DataMapper at Travis CI"
 [Travis CI Status]: https://img.shields.io/travis/t3v/t3v_datamapper.svg?style=flat "Travis CI Status"
 [TYPO3]: https://typo3.org "The Enterprise Open Source CMS"

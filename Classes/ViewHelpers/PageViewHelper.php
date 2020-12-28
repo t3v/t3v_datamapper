@@ -1,13 +1,13 @@
 <?php
+declare(strict_types=1);
 
 namespace T3v\T3vDataMapper\ViewHelpers;
 
 use T3v\T3vCore\Service\LocalizationService;
+use T3v\T3vCore\ViewHelpers\AbstractViewHelper;
+use T3v\T3vDataMapper\Service\PageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
-use T3v\T3vCore\ViewHelpers\AbstractViewHelper;
-
-use T3v\T3vDataMapper\Service\PageService;
 
 /**
  * The page view helper class.
@@ -16,8 +16,6 @@ use T3v\T3vDataMapper\Service\PageService;
  */
 class PageViewHelper extends AbstractViewHelper
 {
-
-
     /**
      * Initializes the arguments.
      */
