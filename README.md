@@ -1,8 +1,6 @@
 [T3v DataMapper]
 ================
 
-[![Travis CI Status][Travis CI Status]][Travis CI]
-
 **The Data Mapper extension of TYPO3voilà.**
 
 Brings the [Database] and [Validation] magic from [Laravel] to [TYPO3].
@@ -50,20 +48,19 @@ Development
 
 ### Setup
 
-```
-$ ./Scripts/Setup.sh
+```sh
+git clone https://github.com/t3v/t3v_datamapper.git && cd t3v_datamapper
+
+./Scripts/Setup.sh
 ```
 
-### Run Unit Tests
+### Testing
 
-```
-$ ./Scripts/Tests/Unit.sh
-```
-
-### Run Functional Tests
-
-```
-$ ./Scripts/Tests/Functional.sh
+```sh
+./Scripts/Tests.sh
+./Scripts/Tests/Unit.sh
+./Scripts/Tests/Functional.sh
+./Scripts/Tests/Maintenance.sh
 ```
 
 Bug Reports
@@ -104,8 +101,6 @@ T3v DataMapper is released under the [MIT License (MIT)], see [LICENSE].
 [Semantic Versioning 2.0.0]: http://semver.org "Semantic Versioning 2.0.0"
 [Sven Lahann]: https://github.com/svenlahann "Sven Lahann at GitHub"
 [T3v DataMapper]: https://t3v.github.io/t3v_datamapper/ "The Data Mapper extension of TYPO3voilà."
-[Travis CI]: https://travis-ci.org/t3v/t3v_datamapper "T3v DataMapper at Travis CI"
-[Travis CI Status]: https://img.shields.io/travis/t3v/t3v_datamapper.svg?style=flat "Travis CI Status"
 [TYPO3]: https://typo3.org "The Enterprise Open Source CMS"
 [TYPO3voilà]: https://github.com/t3v "“UH LÁLÁ, TYPO3!”"
 [Unit Testing TYPO3]: https://wiki.typo3.org/Unit_Testing_TYPO3 "Unit testing TYPO3"

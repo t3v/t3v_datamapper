@@ -24,13 +24,13 @@ class DatabaseService extends AbstractService
         // framework as easy as possible.
         $capsule = new Capsule();
 
-        // Add connection to Capsule.
+        // Add connection to Capsule:
         $capsule->addConnection(self::getConnection($connection));
 
-        // Make this Capsule instance available globally via static methods.
+        // Make this Capsule instance available globally via static methods:
         $capsule->setAsGlobal();
 
-        // Setup the Eloquent ORM.
+        // Setup the Eloquent ORM:
         $capsule->bootEloquent();
     }
 
