@@ -18,5 +18,5 @@ export TESTING_FRAMEWORK_BUILD_PATH="$VENDOR_PATH/typo3/testing-framework/Resour
 
 # find "Tests/Unit" -wholename "*Test.php" | parallel --gnu "$BIN_PATH/phpunit --colors --configuration $TESTING_FRAMEWORK_BUILD_PATH/UnitTests.xml {}"
 
-# Try to keep environment pollution down, EPA loves us
+# Try to keep environment pollution down, EPA loves us:
 unset BASE_PATH ROOT_PATH

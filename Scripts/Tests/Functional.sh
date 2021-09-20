@@ -15,7 +15,7 @@ export TESTING_FRAMEWORK_BUILD_PATH="$VENDOR_PATH/typo3/testing-framework/Resour
 export typo3databasehost="localhost";
 export typo3DatabaseUsername="root";
 export typo3DatabasePassword="";
-export typo3DatabaseName="t3v_base";
+export typo3DatabaseName="t3v_datamapper";
 
 # === Commands ===
 
@@ -23,5 +23,5 @@ export typo3DatabaseName="t3v_base";
 
 # find "Tests/Functional" -wholename "*Test.php" | parallel --gnu "$BIN_PATH/phpunit --colors --configuration $TESTING_FRAMEWORK_BUILD_PATH/FunctionalTests.xml {}"
 
-# Try to keep environment pollution down, EPA loves us
+# Try to keep environment pollution down, EPA loves us:
 unset BASE_PATH ROOT_PATH

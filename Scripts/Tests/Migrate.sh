@@ -16,5 +16,5 @@ export TESTING_FRAMEWORK_BUILD_PATH="$VENDOR_PATH/typo3/testing-framework/Resour
 
 "$BIN_PATH/phpunit" --configuration "$TESTING_FRAMEWORK_BUILD_PATH/UnitTests.xml" --migrate-configuration
 
-# Try to keep environment pollution down, EPA loves us
+# Try to keep environment pollution down, EPA loves us:
 unset BASE_PATH ROOT_PATH
