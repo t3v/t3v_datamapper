@@ -41,7 +41,7 @@ Service
 View Helpers
 ------------
 
-* Page View Helper
+* Page View Helper *
 
 Development
 -----------
@@ -60,7 +60,7 @@ git clone https://github.com/t3v/t3v_datamapper.git && cd t3v_datamapper
 ./Scripts/Tests.sh
 ./Scripts/Tests/Unit.sh
 ./Scripts/Tests/Functional.sh
-./Scripts/Tests/Maintenance.sh
+./Scripts/Tests/Migrate.sh
 ```
 
 Bug Reports
