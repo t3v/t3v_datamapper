@@ -28,7 +28,7 @@
     { "type": "composer", "url": "https://composer.typo3.org" }
   ],
   "require": {
-    "php": ">= 7.0 < 7.3",
+    "php": ">= 7.2",
     "typo3/cms-core": "^7.6",
     "phplucidframe/console-table": "^1.2",
     "illuminate/database": "^5.4",
