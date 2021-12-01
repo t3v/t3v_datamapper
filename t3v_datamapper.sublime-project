@@ -1,7 +1,7 @@
 {
   "folders": [
     {
-      "name": "t3v_datamapper",
+      "name": "@t3v/t3v_datamapper",
       "path": "./",
       "folder_exclude_patterns": [
         ".build",
