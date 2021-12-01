@@ -10,7 +10,8 @@
       ],
       "file_exclude_patterns": [
         "*.afdesign",
-        "*.svg",
+        "*.afphoto",
+        "*.pxd",
         ".keep",
         "composer.lock"
       ]
