@@ -9,7 +9,21 @@
       "homepage": "https://bitaculous.com"
     }
   ],
-  "keywords": ["CMS", "Data", "Database", "Extension", "Laravel", "Mapper", "ORM", "SQL", "T3v", "TYPO3", "TYPO3voila", "UH LÁLÁ", "Validation"],
+  "keywords": [
+    "CMS",
+    "Data",
+    "Database",
+    "Extension",
+    "Laravel",
+    "Mapper",
+    "ORM",
+    "SQL",
+    "T3v",
+    "TYPO3",
+    "TYPO3voilà",
+    "UH LÁLÁ",
+    "Validation"
+  ],
   "homepage": "https://t3v.github.io/t3v_datamapper/",
   "support": {
     "issues": "https://github.com/t3v/t3v_datamapper/issues"
