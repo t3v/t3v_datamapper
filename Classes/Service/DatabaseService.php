@@ -55,7 +55,7 @@ class DatabaseService extends AbstractService
             // )->get('t3v_datamapper');
 
             if (is_string($extensionConfiguration)) {
-                $extensionConfiguration = @unserialize($extensionConfiguration, false);
+                $extensionConfiguration = @unserialize($extensionConfiguration, []);
             }
 
             $configuration = [
