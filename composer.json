@@ -9,7 +9,21 @@
       "homepage": "https://bitaculous.com"
     }
   ],
-  "keywords": ["CMS", "Data", "Database", "Extension", "Laravel", "Mapper", "ORM", "SQL", "T3v", "TYPO3", "TYPO3voila", "UH LÁLÁ", "Validation"],
+  "keywords": [
+    "CMS",
+    "Data",
+    "Database",
+    "Extension",
+    "Laravel",
+    "Mapper",
+    "ORM",
+    "SQL",
+    "T3v",
+    "TYPO3",
+    "TYPO3voilà",
+    "UH LÁLÁ",
+    "Validation"
+  ],
   "homepage": "https://t3v.github.io/t3v_datamapper/",
   "support": {
     "issues": "https://github.com/t3v/t3v_datamapper/issues"
@@ -28,7 +42,7 @@
     { "type": "composer", "url": "https://composer.typo3.org" }
   ],
   "require": {
-    "php": ">= 7.0 < 7.4",
+    "php": ">= 7.2",
     "typo3/cms-core": "^8.7",
     "phplucidframe/console-table": "^1.2",
     "illuminate/database": "^5.5",
@@ -55,7 +69,9 @@
   },
   "extra": {
     "typo3/cms": {
+      "app-dir": ".build",
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "extension-key": "t3v_datamapper",
       "web-dir": ".build/web"
     }
   },

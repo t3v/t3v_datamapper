@@ -1,8 +1,6 @@
 [T3v DataMapper]
 ================
 
-[![Travis CI Status][Travis CI Status]][Travis CI]
-
 **Brings the [Database] and [Validation] magic from [Laravel] to [TYPO3].**
 
 Dependencies
@@ -80,15 +78,15 @@ $ ./Scripts/Tests/Functional.sh
 Bug Reports
 -----------
 
-GitHub Issues are used for managing bug reports and feature requests. If you run into issues, please search the issues
-and submit new problems [here].
+GitHub Issues are used for managing bug reports and feature requests. If you run into issues, please search the issues and submit new
+problems [here].
 
 Versioning
 ----------
 
-This library aims to adhere to [Semantic Versioning 2.0.0]. Violations of this scheme should be reported as bugs.
-Specifically, if a minor or patch version is released that breaks backward compatibility, that version should be
-immediately yanked and / or a new version should be immediately released that restores compatibility.
+This library aims to adhere to [Semantic Versioning 2.0.0]. Violations of this scheme should be reported as bugs. Specifically, if a minor
+or patch version is released that breaks backward compatibility, that version should be immediately yanked and / or a new version should be
+immediately released that restores compatibility.
 
 Credits
 -------
@@ -115,8 +113,6 @@ T3v DataMapper is released under the [MIT License (MIT)], see [LICENSE].
 [Semantic Versioning 2.0.0]: http://semver.org "Semantic Versioning 2.0.0"
 [Sven Lahann]: https://github.com/svenlahann "Sven Lahann at GitHub"
 [T3v DataMapper]: https://t3v.github.io/t3v_datamapper/ "Brings the Database and Validation magic from Laravel to TYPO3."
-[Travis CI]: https://travis-ci.org/t3v/t3v_datamapper "T3v DataMapper at Travis CI"
-[Travis CI Status]: https://img.shields.io/travis/t3v/t3v_datamapper.svg?style=flat "Travis CI Status"
 [TYPO3]: https://typo3.org "The Enterprise Open Source CMS"
 [TYPO3voila]: https://github.com/t3v "“UH LÁLÁ, TYPO3!”"
 [Unit Testing TYPO3]: https://wiki.typo3.org/Unit_Testing_TYPO3 "Unit testing TYPO3"
