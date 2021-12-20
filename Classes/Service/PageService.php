@@ -2,7 +2,7 @@
 namespace T3v\T3vDataMapper\Service;
 
 use T3v\T3vCore\Service\AbstractService;
-use T3v\T3vCore\Service\LanguageService;
+use T3v\T3vCore\Service\LocalizationService as LanguageService;
 use T3v\T3vCore\Service\SettingsService;
 use T3v\T3vDataMapper\Domain\Model\Page;
 use TYPO3\CMS\Core\Database\QueryGenerator;
@@ -37,7 +37,7 @@ class PageService extends AbstractService
     /**
      * The language service.
      *
-     * @var \T3v\T3vCore\Service\LanguageService
+     * @var \T3v\T3vCore\Service\LocalizationService
      */
     protected $languageService;
 
@@ -53,13 +53,13 @@ class PageService extends AbstractService
      */
     public function __construct()
     {
-        parent::__construct();
+        // parent::__construct();
 
         $this->queryGenerator = GeneralUtility::makeInstance(QueryGenerator::class);
         $this->settingsService = GeneralUtility::makeInstance(SettingsService::class);
         $this->languageService = GeneralUtility::makeInstance(LanguageService::class);
         $this->databaseService = GeneralUtility::makeInstance(DatabaseService::class);
-        $this->databaseService->setup();
+        $this->databaseService::setup();
     }
 
     /**

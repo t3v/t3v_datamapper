@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace T3v\T3vDataMapper\ViewHelpers\Page;
 
-use T3v\T3vCore\Service\LanguageService;
+use T3v\T3vCore\Service\LocalizationService;
 use T3v\T3vCore\ViewHelpers\AbstractConditionViewHelper;
 use T3v\T3vDataMapper\Service\PageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -37,21 +37,17 @@ class HiddenViewHelper extends AbstractConditionViewHelper
         $uid = intval($arguments['uid']);
         $languageUid = isset($arguments['languageUid']) ? intval($arguments['languageUid']) : self::getLanguageService()->getLanguageUid();
         $page = self::getPageService()->getPageByUid($uid, $languageUid);
-        $hidden = (boolean) $page['hidden'];
-
-        return $hidden;
+        return (boolean) $page['hidden'];
     }
 
     /**
      * Gets the language service.
      *
-     * @return \T3v\T3vCore\Service\LanguageService The language service
+     * @return \T3v\T3vCore\Service\LocalizationService The language service
      */
-    protected static function getLanguageService(): LanguageService
+    protected static function getLanguageService(): LocalizationService
     {
-        $languageService = GeneralUtility::makeInstance(LanguageService::class);
-
-        return $languageService;
+        return GeneralUtility::makeInstance(LocalizationService::class);
     }
 
     /**
@@ -61,8 +57,6 @@ class HiddenViewHelper extends AbstractConditionViewHelper
      */
     protected static function getPageService(): PageService
     {
-        $pageService = GeneralUtility::makeInstance(PageService::class);
-
-        return $pageService;
+        return GeneralUtility::makeInstance(PageService::class);
     }
 }
