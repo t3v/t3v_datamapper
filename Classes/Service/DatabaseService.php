@@ -47,9 +47,12 @@ class DatabaseService extends AbstractService
         $configuration = [];
 
         if (is_array($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections'][$connection])) {
-            $extensionConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3v_datamapper'];
+            $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)->get('t3v_datamapper');
 
             // TODO TYPO3 10 compatibility
+               // geht schon beim 9er
+
+
             // $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
             //     \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
             // )->get('t3v_datamapper');
