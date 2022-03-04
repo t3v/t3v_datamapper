@@ -8,8 +8,10 @@ Unreleased
 
 * Moved `ExtensionService` to T3v Core (breaking change)
 * Removed `LanguageOverlay` including command, controller, model and repository (breaking change)
+* Integrated `t3v/t3v_testing` which is based on `typo3/testing-framework`
+* Support for TYPO3 CMS 9.5 or greater
 * Dropped support for TYPO3 8.x (breaking change)
-* PSR-12 formatting
+* PSR-12: Extended Coding Style
 * Updated Travis CI and AppVeyor configuration
 * Updated dependencies
 * Cleaned up
