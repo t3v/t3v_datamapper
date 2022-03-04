@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# === Constants ===
+# === Variables ===
 
 TYPO3_VERSION="^10.4"
 TYPO3_VERSION_DIGITS=${TYPO3_VERSION//[^[:digit:]]/}
