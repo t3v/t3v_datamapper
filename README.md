@@ -1,7 +1,7 @@
 [T3v DataMapper]
 ================
 
-**The Data Mapper extension of TYPO3voilà.**
+**The Data Mapper extension of [TYPO3voilà].**
 
 Brings the [Database] and [Validation] magic from [Laravel] to [TYPO3].
 
