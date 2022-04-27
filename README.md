@@ -59,20 +59,20 @@ Development
 
 ### Setup
 
-```
-$ ./Scripts/Setup.sh
+```sh
+./Scripts/Setup.sh
 ```
 
 ### Run Unit Tests
 
-```
-$ ./Scripts/Tests/Unit.sh
+```sh
+./Scripts/Tests/Unit.sh
 ```
 
 ### Run Functional Tests
 
-```
-$ ./Scripts/Tests/Functional.sh
+```sh
+./Scripts/Tests/Functional.sh
 ```
 
 Bug Reports
