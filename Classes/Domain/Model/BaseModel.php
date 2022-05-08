@@ -6,11 +6,11 @@ namespace T3v\T3vDataMapper\Domain\Model;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * The abstract model class.
+ * The base model class.
  *
  * @package T3v\T3vDataMapper\Domain\Model
  */
-abstract class AbstractModel extends Model
+class BaseModel extends Model
 {
     /**
      * The table identifier for `created_at` and `updated_at`.

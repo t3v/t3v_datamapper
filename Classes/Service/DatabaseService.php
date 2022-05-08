@@ -5,6 +5,10 @@ namespace T3v\T3vDataMapper\Service;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use T3v\T3vCore\Service\AbstractService;
+use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException;
+use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * The database service class.
@@ -17,6 +21,8 @@ class DatabaseService extends AbstractService
      * Setup the Eloquent ORM.
      *
      * @param string $connection The optional connection, defaults to `Default`
+     * @throws ExtensionConfigurationExtensionNotConfiguredException
+     * @throws ExtensionConfigurationPathDoesNotExistException
      */
     public static function setup(string $connection = 'Default'): void
     {
@@ -39,28 +45,17 @@ class DatabaseService extends AbstractService
      *
      * @param string $connection The optional connection, defaults to `Default`
      * @return array The connection configuration
-     * @link https://laravel.com/docs/master/database#configuration The Laravel Database Configuration
-     * @link https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/GlobalValues/GlobalVariables The TYPO3 Global variables
+     * @throws ExtensionConfigurationExtensionNotConfiguredException
+     * @throws ExtensionConfigurationPathDoesNotExistException
+     * @link https://laravel.com/docs/master/database#configuration The Laravel database configuration
+     * @link https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/GlobalValues/GlobalVariables The TYPO3 global variables
      */
     protected static function getConnection(string $connection = 'Default'): array
     {
         $configuration = [];
+        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('t3v_datamapper');
 
         if (is_array($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections'][$connection])) {
-            $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)->get('t3v_datamapper');
-
-            // TODO TYPO3 10 compatibility
-               // geht schon beim 9er
-
-
-            // $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-            //     \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
-            // )->get('t3v_datamapper');
-
-            if (is_string($extensionConfiguration)) {
-                $extensionConfiguration = @unserialize($extensionConfiguration, []);
-            }
-
             $configuration = [
                 'driver' => $extensionConfiguration['driver'] ?: 'mysql',
                 'host' => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections'][$connection]['host'],

@@ -8,7 +8,7 @@ namespace T3v\T3vDataMapper\Domain\Model;
  *
  * @package T3v\T3vDataMapper\Domain\Model
  */
-class Page extends AbstractModel
+class Page extends BaseModel
 {
     /**
      * The name of the table associated with the model.
