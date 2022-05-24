@@ -94,9 +94,9 @@ class PageLanguageOverlayCommandController extends AbstractCommandController {
         $languageOverlay->title              = $page->title;
         $languageOverlay->nav_title          = $page->nav_title;
         $languageOverlay->title              = $page->title;
-        $languageOverlay->keywords           = $page->keywords;
-        $languageOverlay->description        = $page->description;
-        $languageOverlay->abstract           = $page->abstract;
+        // $languageOverlay->keywords        = $page->keywords;
+        // $languageOverlay->description     = $page->description;
+        // $languageOverlay->abstract        = $page->abstract;
         $languageOverlay->author             = $page->author;
         $languageOverlay->author_email       = $page->author_email;
         $languageOverlay->tx_t3vpage_summary = $page->tx_t3vpage_summary;
