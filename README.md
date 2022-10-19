@@ -9,9 +9,8 @@ Dependencies
 ------------
 
 * TYPO3 CMS 9.5
-* PHPLucidFrame ConsoleTable library
+* PHPLucidFrame Console Table library
 * Illuminate Database component
-* Illuminate Validation component
 * T3v Core extension
 
 Installation
@@ -32,16 +31,6 @@ Service
 -------
 
 * Database Service
-* Page Service
-
-### Validation
-
-* Validator Service
-
-View Helpers
-------------
-
-* Page View Helper *
 
 Development
 -----------
