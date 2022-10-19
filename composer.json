@@ -54,7 +54,7 @@
     "phplucidframe/console-table": "^1.2",
     "illuminate/database": "^6.20",
     "illuminate/validation": "^6.20",
-    "t3v/t3v_core": "dev-develop"
+    "t3v/t3v_core": "dev-9-x"
   },
   "require-dev": {
     "ext-dom": "*",
