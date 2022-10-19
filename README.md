@@ -8,7 +8,7 @@ Brings the [Database] and [Validation] magic from [Laravel] to [TYPO3].
 Dependencies
 ------------
 
-* TYPO3 CMS 9.5 or greater
+* TYPO3 CMS 10.4 or greater
 * PHPLucidFrame ConsoleTable library
 * Illuminate Database component
 * Illuminate Validation component
@@ -26,22 +26,14 @@ Domain
 
 ### Model
 
+* Base
+* Content
 * Page
 
 Service
 -------
 
 * Database Service
-* Page Service
-
-### Validation
-
-* Validator Service
-
-View Helpers
-------------
-
-* Page View Helper *
 
 Development
 -----------
