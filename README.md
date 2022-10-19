@@ -9,9 +9,8 @@ Dependencies
 ------------
 
 * TYPO3 CMS 10.4 or greater
-* PHPLucidFrame ConsoleTable library
+* PHPLucidFrame Console Table library
 * Illuminate Database component
-* Illuminate Validation component
 * T3v Core extension
 
 Installation

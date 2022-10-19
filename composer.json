@@ -53,7 +53,6 @@
     "typo3/cms-core": "^10.4.32 || ^11.5.17",
     "phplucidframe/console-table": "^1.2",
     "illuminate/database": "^8.83 || ^9.20",
-    "illuminate/validation": "^8.83 || ^9.20",
     "t3v/t3v_core": "dev-develop"
   },
   "require-dev": {
