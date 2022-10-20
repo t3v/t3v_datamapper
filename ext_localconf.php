@@ -5,6 +5,6 @@
  * @noinspection PhpFullyQualifiedNameUsageInspection
  */
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 // === T3v Generator ===
