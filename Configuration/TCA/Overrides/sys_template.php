@@ -1,4 +1,12 @@
 <?php
+declare(strict_types=1);
+
+/**
+ * The `sys_template` TCA override.
+ */
+
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') or die();
 
 // === Variables ===
@@ -8,6 +16,6 @@ $extensionTitle = 'T3v DataMapper';
 
 // === TypoScript ===
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript', $extensionTitle);
+ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript', $extensionTitle);
 
-# === T3v Generator ===
+// === T3v Generator ===
