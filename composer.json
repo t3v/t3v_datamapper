@@ -1,7 +1,7 @@
 {
   "name": "t3v/t3v_datamapper",
   "type": "typo3-cms-extension",
-  "description": "The Data Mapper extension of TYPO3voilà.",
+  "description": "The data mapper extension of TYPO3voilà.",
   "authors": [
     {
       "name": "Maik Kempe",
