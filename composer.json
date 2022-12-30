@@ -49,7 +49,7 @@
     }
   ],
   "require": {
-    "php": ">= 7.2",
+    "php": ">= 7.2 <= 7.4",
     "typo3/cms-core": "^9.5.31",
     "phplucidframe/console-table": "^1.2",
     "illuminate/database": "^6.20",
