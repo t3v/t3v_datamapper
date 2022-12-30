@@ -114,6 +114,6 @@ T3v DataMapper is released under the [MIT License (MIT)], see [LICENSE].
 [Sven Lahann]: https://github.com/svenlahann "Sven Lahann at GitHub"
 [T3v DataMapper]: https://t3v.github.io/t3v_datamapper/ "Brings the Database and Validation magic from Laravel to TYPO3."
 [TYPO3]: https://typo3.org "The Enterprise Open Source CMS"
-[TYPO3voila]: https://github.com/t3v "“UH LÁLÁ, TYPO3!”"
+[TYPO3voilà]: https://github.com/t3v "“UH LÁLÁ, TYPO3!”"
 [Unit Testing TYPO3]: https://wiki.typo3.org/Unit_Testing_TYPO3 "Unit testing TYPO3"
 [Validation]: https://github.com/illuminate/validation "Illuminate Validation component"
