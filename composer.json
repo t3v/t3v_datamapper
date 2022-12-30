@@ -50,9 +50,9 @@
   ],
   "require": {
     "php": ">= 7.4",
-    "typo3/cms-core": "^10.4.32 || ^11.5.17",
+    "typo3/cms-core": "^10.4.34 || ^11.5.21",
     "phplucidframe/console-table": "^1.2",
-    "illuminate/database": "^8.83 || ^9.20",
+    "illuminate/database": "^8.83 || ^9.28",
     "t3v/t3v_core": "dev-develop"
   },
   "require-dev": {
