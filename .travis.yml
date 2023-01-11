@@ -41,6 +41,8 @@ matrix:
       env: TYPO3_VERSION="^11.5"
     - php: 8.1
       env: TYPO3_VERSION="^11.5"
+    - php: 8.2
+      env: TYPO3_VERSION="^11.5"
 
 notifications:
   email:
@@ -50,6 +52,7 @@ notifications:
 #   - 7.4
 #   - 8.0
 #   - 8.1
+#   - 8.2
 
 services:
   - mysql
