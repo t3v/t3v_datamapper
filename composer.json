@@ -50,14 +50,14 @@
   ],
   "require": {
     "php": ">= 7.4",
-    "typo3/cms-core": "^10.4.34 || ^11.5.21",
+    "typo3/cms-core": "^10.4.34 || ^11.5.22",
     "phplucidframe/console-table": "^1.2",
     "illuminate/database": "^8.83 || ^9.28",
     "t3v/t3v_core": "dev-develop"
   },
   "require-dev": {
     "ext-dom": "*",
-    "t3v/t3v_testing": "^1.2"
+    "t3v/t3v_testing": "^2.0"
   },
   "autoload": {
     "psr-4": {
