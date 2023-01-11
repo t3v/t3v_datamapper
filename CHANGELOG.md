@@ -3,8 +3,8 @@ CHANGELOG
 
 Notable changes will be documented in this file. The project adheres to [Semantic Versioning].
 
-Unreleased
-----------
+9.0.0
+-----
 
 * Dropped support for TYPO3 9.5 (breaking change)
 * Dropped support for PHP < 7.4 (breaking change)
