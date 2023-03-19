@@ -42,17 +42,11 @@
   "replace": {
     "typo3-ter/t3v_datamapper": "self.version"
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://composer.typo3.org"
-    }
-  ],
   "require": {
     "php": ">= 7.4",
-    "typo3/cms-core": "^10.4.34 || ^11.5.22",
+    "typo3/cms-core": "^10.4.36 || ^11.5.25",
     "phplucidframe/console-table": "^1.2",
-    "illuminate/database": "^8.83 || ^9.28",
+    "illuminate/database": "^8.83 || ^9.52",
     "t3v/t3v_core": "dev-develop"
   },
   "require-dev": {
