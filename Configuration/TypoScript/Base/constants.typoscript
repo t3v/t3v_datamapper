@@ -1,8 +1,12 @@
-# ---------------------------------
-# | T3v DataMapper Base Constants |
-# ---------------------------------
+/*
+---------------------------------
+| T3v DataMapper Base Constants |
+---------------------------------
+*/
 
-# === Plugin Constants ===
+/*
+=== Plugin ===
+*/
 
 plugin {
   tx_t3vdatamapper {
@@ -51,5 +55,3 @@ plugin {
     }
   }
 }
-
-# === T3v Generator ===

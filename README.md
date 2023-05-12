@@ -57,15 +57,15 @@ git clone https://github.com/t3v/t3v_datamapper.git && cd t3v_datamapper
 Bug Reports
 -----------
 
-GitHub Issues are used for managing bug reports and feature requests. If you run into issues, please search the issues and submit new
-problems [here].
+GitHub Issues are used for managing bug reports and feature requests. If you run into issues, please search the issues
+and submit new problems [here].
 
 Versioning
 ----------
 
-This project aims to adhere to [Semantic Versioning 2.0.0]. Violations of this scheme should be reported as bugs. Specifically, if a minor
-or patch version is being released that breaks backward compatibility, that version should be immediately yanked and / or a new version
-should be immediately released that restores compatibility.
+This project aims to adhere to [Semantic Versioning 2.0.0]. Violations of this scheme should be reported as bugs.
+Specifically, if a minor or patch version is being released that breaks backward compatibility, that version should be
+immediately yanked and / or a new version should be immediately released that restores compatibility.
 
 Credits
 -------

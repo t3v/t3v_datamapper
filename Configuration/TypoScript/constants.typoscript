@@ -1,9 +1,11 @@
-# ----------------------------
-# | T3v DataMapper Constants |
-# ----------------------------
+/*
+----------------------------
+| T3v DataMapper Constants |
+----------------------------
+*/
 
-# === Imports ===
+/*
+=== Imports ===
+*/
 
 @import './Base/constants.typoscript'
-
-# === T3v Generator ===

@@ -1,9 +1,11 @@
-# ------------------------
-# | T3v DataMapper Setup |
-# ------------------------
+/*
+------------------------
+| T3v DataMapper Setup |
+------------------------
+*/
 
-# === Imports ===
+/*
+=== Imports ===
+*/
 
 @import './Base/setup.typoscript'
-
-# === T3v Generator ===
